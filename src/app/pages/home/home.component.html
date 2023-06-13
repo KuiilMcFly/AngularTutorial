@@ -1,13 +1,7 @@
 <app-header></app-header>
 
 <div class="card-container">
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[1].tipo" [title]="dogRace[1].razza" [descrizione]="dogRace[1].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-    <app-cards-container [tipo]="dogRace[0].tipo" [title]="dogRace[0].razza" [descrizione]="dogRace[0].descrizione"></app-cards-container>
-</div>
+    <div class="card-container" *ngFor="let dog of dogRace">
+      <app-cards-container [immagine]="dog.immagine" [tipo]="dog.tipo" [title]="dog.razza" [descrizione]="dog.descrizione"></app-cards-container>
+    </div>
+  </div>

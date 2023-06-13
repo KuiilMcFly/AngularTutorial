@@ -3,7 +3,7 @@
     <form>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" placeholder="Enter your username">
+        <input type="text" class="form-control" id="username" placeholder="Enter your username" (input)="OnInput($event)">
       </div>
       <div class="form-group">
         <label for="password">Password</label>
