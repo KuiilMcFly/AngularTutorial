@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { DogModalComponent } from './components/dog-modal/dog-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     CardsContainerComponent,
     LoginPageComponent,
     LoginFormComponent,
+    DogModalComponent,
    
   ],
   imports: [
