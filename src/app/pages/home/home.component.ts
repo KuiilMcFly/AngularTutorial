@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  selectedDog: any;
+  showComponent = false;
+
+  // Metodo che attiva la variabile booleana
+  showComponente() {
+    this.showComponent = true;
+    
+  }
+
+  consolog() {
+    console.log(this.showComponent) 
+  }
+  
+
   dogRace = [
     {
     razza: 'Labrador',
