@@ -1,17 +1,17 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{title}}</mat-card-title>
-    <mat-card-subtitle>{{tipo}}</mat-card-subtitle>
+    <mat-card-title>{{dog.title}}</mat-card-title>
+    <mat-card-subtitle>{{dog.tipo}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="immagine" alt="Dog Photo">
+  <img mat-card-image [src]="dog.immagine" alt="Dog Photo">
   <mat-card-content>
     <p>
-      {{descrizione}}
+      {{dog.descrizione}}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="showComponente(true)">DESCRIZIONE</button>
+    <button  mat-button (click)="showComponente(true)">DESCRIZIONE</button>
 
     <button mat-button>SHARE</button>
   </mat-card-actions>

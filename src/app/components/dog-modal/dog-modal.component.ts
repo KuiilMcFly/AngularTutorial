@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { log } from 'console';
 
 @Component({
   selector: 'app-dog-modal',
@@ -10,19 +11,26 @@ export class DogModalComponent implements OnInit {
   @Input() descrizione: string | undefined;
   @Input() tipo: string | undefined;
   @Input() immagine: string | undefined;
+  @Input() story: string | undefined;
   @Input() showComponent:boolean;
   @Input() dog: any;
 
   @Output() showComponentChange=new EventEmitter<any>();
   // Metodo che disattiva la variabile booleana
   
-  hideComponente(value) {
+  hideComponente(value:any) {
     this.showComponent = value
     this.showComponentChange.emit(value)
   }
+
+  OnClick() {
+    console.log(this.dog, 'log di dog')
+  }
   constructor() { }
+
+
 
   ngOnInit() {
   }
-
+  @Input() items: Array<{razza: string, descrizione: string}>;
 }

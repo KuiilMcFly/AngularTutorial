@@ -8,26 +8,27 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   
 })
 export class CardsContainerComponent implements OnInit {
-  @Input() title: string | undefined;
-  @Input() descrizione: string | undefined;
-  @Input() tipo: string | undefined;
-  @Input() immagine: string | undefined;
+
   @Input() showComponent:boolean;
   @Output() showComponentChange=new EventEmitter<any>();
- 
+  @Input() dog: any;
+  @Output() selectedDog=new EventEmitter<any>();
+  
 
   showComponente(value:any) {
     console.log('hai cliccato');
     this.showComponent = value
     this.showComponentChange.emit(value)
+    this.selectedDog.emit(this.dog)
   }
  
   
-
+@Input() items: Array<{razza: string, descrizione: string}>;
   
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

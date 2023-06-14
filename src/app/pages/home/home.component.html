@@ -2,11 +2,10 @@
 
 <div class="card-container">
     <div *ngFor="let dog of dogRace; let i = index">
-      <app-cards-container [(showComponent)]="showComponent" [immagine]="dog.immagine" [tipo]="dog.tipo" [title]="dog.razza" [descrizione]="dog.descrizione"></app-cards-container>
+      <app-cards-container  (selectedDog)="selectDog($event)" [dog]="dog" [(showComponent)]="showComponent" ></app-cards-container>
     
     </div>
   </div>
   <button (click)="consolog()">check status</button>
 
-  <button (click)="showComponente()">Mostra componente</button>
-  <app-dog-modal [(showComponent)]="showComponent" *ngIf="showComponent" [immagine]="dogRace" [tipo]="dogRace" [title]="dogRace" [descrizione]="dogRace"></app-dog-modal>
+  <app-dog-modal [dog]="selectedDog" [(showComponent)]="showComponent" *ngIf="showComponent" [story]="dogRace" [immagine]="dogRace" [tipo]="dogRace" [title]="dogRace" [descrizione]="dogRace"></app-dog-modal>
