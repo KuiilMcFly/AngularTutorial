@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { DogModalComponent } from './components/dog-modal/dog-modal.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { DogModalComponent } from './components/dog-modal/dog-modal.component';
     LoginPageComponent,
     LoginFormComponent,
     DogModalComponent,
+    ImageViewerComponent,
    
   ],
   imports: [
