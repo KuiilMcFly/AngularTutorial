@@ -13,6 +13,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { DogModalComponent } from './components/dog-modal/dog-modal.component';
 import { ImageViewerComponent } from './pages/image-viewer/image-viewer.component';
+import { TextAreaComponent } from './pages/text-area/text-area.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { ImageViewerComponent } from './pages/image-viewer/image-viewer.componen
     LoginFormComponent,
     DogModalComponent,
     ImageViewerComponent,
+    TextAreaComponent,
    
   ],
   imports: [

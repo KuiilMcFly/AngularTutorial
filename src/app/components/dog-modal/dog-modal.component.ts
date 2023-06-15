@@ -25,7 +25,7 @@ export class DogModalComponent implements OnInit {
   }
 
   OnClick() {
-    console.log(this.dog, 'log di dog')
+    console.log(this.title, 'log di dog')
   }
   constructor() { }
 

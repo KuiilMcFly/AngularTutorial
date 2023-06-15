@@ -8,6 +8,7 @@ export class HomeComponent implements OnInit {
 
   @Input() selectedDog: any;
   showComponent = false;
+  
 
   // Metodo che attiva la variabile booleana
   showComponente(dog: any) {

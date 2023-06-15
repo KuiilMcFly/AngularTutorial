@@ -5,7 +5,7 @@
     <mat-card-subtitle>{{dog.tipo}}</mat-card-subtitle>
   </mat-card-header>
   <a href="/image">
-    <img mat-card-image [src]="dog.immagine" alt="Dog Photo">
+    <img mat-card-image src={{dog.immagine}} alt="Dog Photo">
   </a>
   <mat-card-content>
     <p>
@@ -13,7 +13,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button  mat-button (click)="showComponente(true)">DESCRIZIONE</button>
+    <button  mat-button (dog)="selectedDog" (click)="showComponente(true)">DESCRIZIONE</button>
 
     <button mat-button>SHARE</button>
   </mat-card-actions>
