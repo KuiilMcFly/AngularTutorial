@@ -4,7 +4,9 @@
     <mat-card-title>{{dog.title}}</mat-card-title>
     <mat-card-subtitle>{{dog.tipo}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="dog.immagine" alt="Dog Photo">
+  <a href="/image">
+    <img mat-card-image [src]="dog.immagine" alt="Dog Photo">
+  </a>
   <mat-card-content>
     <p>
       {{dog.descrizione}}

@@ -2,7 +2,7 @@
 
 <div class="card-container">
     <div *ngFor="let dog of dogRace; let i = index">
-      <app-cards-container  (selectedDog)="selectDog($event)" [dog]="dog" [(showComponent)]="showComponent" ></app-cards-container>
+      <app-cards-container   [dog]="dog" [(showComponent)]="showComponent" ></app-cards-container>
     
     </div>
   </div>

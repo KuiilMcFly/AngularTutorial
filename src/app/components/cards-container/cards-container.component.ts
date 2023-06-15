@@ -14,6 +14,9 @@ export class CardsContainerComponent implements OnInit {
   @Input() dog: any;
   @Output() selectedDog=new EventEmitter<any>();
   
+  selectDog(ev){
+    this.selectedDog = ev
+  }
 
   showComponente(value:any) {
     console.log('hai cliccato');
