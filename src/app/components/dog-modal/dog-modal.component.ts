@@ -5,17 +5,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   selector: 'app-dog-modal',
   templateUrl: './dog-modal.component.html',
   styleUrls: ['./dog-modal.component.scss'],
-  animations: [
-    trigger('fadeIn', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('0.3s', style({ opacity: 1 }))
-      ]),
-      transition(':leave', [
-        animate('0.3s', style({ opacity: 0 }))
-      ])
-    ])
-  ]
+  
 })
 export class DogModalComponent implements OnInit {
   @Input() title: string | undefined;

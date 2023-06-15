@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .image-container {
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+}
+.container .image-container img {
+  width: 100%;
+  cursor: zoom-in;
+  transition: transform 0.1s ease-in-out;
+}/*# sourceMappingURL=image-viewer.component.css.map */

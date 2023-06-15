@@ -1,0 +1,17 @@
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        width: 1000px;
+        
+        img {
+          width: 100%;
+          cursor: zoom-in;
+          transition: transform 0.1s ease-in-out;
+        }
+      }
+    
+}
