@@ -33,6 +33,7 @@ export class ImageViewerComponent {
   //movimento mouse
 
 onMouseDown(event: MouseEvent) {
+  event.preventDefault();
   this.prevMouseX = event.clientX;
   this.prevMouseY = event.clientY;
   this.isDragging = true;
@@ -46,8 +47,8 @@ onMouseUp() {
 
 onMouseMove(event: MouseEvent) {
   if (this.isDragging) {
-    const deltaX = event.clientX - this.prevMouseX;
-    const deltaY = event.clientY - this.prevMouseY;
+    const deltaX = -(event.clientX - this.prevMouseX);
+    const deltaY = -(event.clientY - this.prevMouseY);
 
     this.mouseX += deltaX;
     this.mouseY += deltaY;
