@@ -1,6 +1,6 @@
 <div class="container">
     <div class="image-container">
         
-        <img #image src="../../../assets/Dogs/carlino.jpg" alt="" (mousemove)="onMouseMove($event)" (wheel)="onWheel($event)">
+        <img class="magnifying-glass" #image src="../../../assets/Dogs/carlino.jpg" alt=""  (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()" (mousemove)="onMouseMove($event)" (wheel)="onWheel($event)">
     </div>
 </div>

@@ -12,18 +12,51 @@ export class ImageViewerComponent {
   private mouseX = 0;
   private mouseY = 0;
 
-  onMouseMove(event: MouseEvent) {
-    this.mouseX = event.offsetX;
-    this.mouseY = event.offsetY;
-    this.updateTransform();
-  }
+  private isDragging = false;
+  private prevMouseX = 0;
+  private prevMouseY = 0;
+
+
 
   onWheel(event: WheelEvent) {
     event.preventDefault();
     const delta = event.deltaY < 0 ? 1.1 : 0.9;
     this.scale *= delta;
+
+    // Aggiungi queste due righe
+    this.mouseX = event.offsetX;
+    this.mouseY = event.offsetY;
+
     this.updateTransform();
   }
+
+  //movimento mouse
+
+onMouseDown(event: MouseEvent) {
+  this.prevMouseX = event.clientX;
+  this.prevMouseY = event.clientY;
+  this.isDragging = true;
+  this.image.nativeElement.classList.add('grabbing');
+}
+
+onMouseUp() {
+  this.isDragging = false;
+  this.image.nativeElement.classList.remove('grabbing');
+}
+
+onMouseMove(event: MouseEvent) {
+  if (this.isDragging) {
+    const deltaX = event.clientX - this.prevMouseX;
+    const deltaY = event.clientY - this.prevMouseY;
+
+    this.mouseX += deltaX;
+    this.mouseY += deltaY;
+    this.updateTransform();
+  }
+
+  this.prevMouseX = event.clientX;
+  this.prevMouseY = event.clientY;
+}
 
   private updateTransform() {
     const transform = `scale(${this.scale}) translate(${this.mouseX * (1 - this.scale)}px, ${this.mouseY * (1 - this.scale)}px)`;
