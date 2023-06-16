@@ -13,16 +13,22 @@
     <mat-icon>format_size</mat-icon>
   </button>
   <mat-select [(ngModel)]="selectedFontSize">
-      <mat-option value="1">8</mat-option>
-      <mat-option value="2">10</mat-option>
-      <mat-option value="3">12</mat-option>
-      <mat-option value="4">14</mat-option>
-      <mat-option value="5">18</mat-option>
-      <mat-option value="6">24</mat-option>
+    <mat-option value="1">8</mat-option>
+    <mat-option value="2">10</mat-option>
+    <mat-option value="3">12</mat-option>
+    <mat-option value="4">14</mat-option>
+    <mat-option value="5">18</mat-option>
+    <mat-option value="6">24</mat-option>
     <mat-option value="7">36</mat-option>
-</mat-select>
-<button (click)="formatText('justifyLeft')">Allinea a sinistra</button>
-<button (click)="formatText('justifyCenter')">Centra</button>
-<button (click)="formatText('justifyRight')">Allinea a destra</button>
+  </mat-select>
+  <button mat-icon-button (click)="formatText('justifyLeft')">
+    <mat-icon>format_align_left</mat-icon>
+  </button>
+  <button mat-icon-button (click)="formatText('justifyCenter')">
+    <mat-icon>format_align_center</mat-icon>
+  </button>
+  <button mat-icon-button (click)="formatText('justifyRight')">
+    <mat-icon>format_align_right</mat-icon>
+  </button>
 </div>
 <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
