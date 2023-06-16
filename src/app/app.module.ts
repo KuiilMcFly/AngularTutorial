@@ -14,6 +14,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { DogModalComponent } from './components/dog-modal/dog-modal.component';
 import { ImageViewerComponent } from './pages/image-viewer/image-viewer.component';
 import { TextAreaComponent } from './pages/text-area/text-area.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { TextAreaComponent } from './pages/text-area/text-area.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,17 @@
-<p>text-area works!</p>
+<div class="toolbar">
+    <button (click)="formatText('bold')">Grassetto</button>
+    <button (click)="formatText('italic')">Corsivo</button>
+    <button (click)="formatText('foreColor', selectedColor)">Colore</button>
+    <input [(ngModel)]="selectedColor" type="color" />
+    <button (click)="formatText('fontSize', selectedFontSize)">Font size</button>
+    <select [(ngModel)]="selectedFontSize">
+      <option value="1">8</option>
+      <option value="2">10</option>
+      <option value="3">12</option>
+      <option value="4">14</option>
+      <option value="5">18</option>
+      <option value="6">24</option>
+      <option value="7">36</option>
+    </select>
+  </div>
+  <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
