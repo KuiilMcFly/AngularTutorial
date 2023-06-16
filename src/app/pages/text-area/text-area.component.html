@@ -36,5 +36,8 @@
   <button mat-icon-button (click)="formatText('insertUnorderedList')">
     <mat-icon>format_list_bulleted</mat-icon>
   </button>
+  <button mat-icon-button (click)="createTable()">
+    <mat-icon>grid_on</mat-icon>
+  </button>
 </div>
 <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
