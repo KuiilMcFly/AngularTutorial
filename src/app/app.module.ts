@@ -15,6 +15,10 @@ import { DogModalComponent } from './components/dog-modal/dog-modal.component';
 import { ImageViewerComponent } from './pages/image-viewer/image-viewer.component';
 import { TextAreaComponent } from './pages/text-area/text-area.component';
 import { FormsModule } from '@angular/forms';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     DogModalComponent,
     ImageViewerComponent,
     TextAreaComponent,
-   
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

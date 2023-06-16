@@ -1,17 +1,25 @@
 <div class="toolbar">
-    <button (click)="formatText('bold')">Grassetto</button>
-    <button (click)="formatText('italic')">Corsivo</button>
-    <button (click)="formatText('foreColor', selectedColor)">Colore</button>
-    <input [(ngModel)]="selectedColor" type="color" />
-    <button (click)="formatText('fontSize', selectedFontSize)">Font size</button>
-    <select [(ngModel)]="selectedFontSize">
-      <option value="1">8</option>
-      <option value="2">10</option>
-      <option value="3">12</option>
-      <option value="4">14</option>
-      <option value="5">18</option>
-      <option value="6">24</option>
-      <option value="7">36</option>
-    </select>
-  </div>
-  <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
+  <button mat-icon-button (click)="formatText('bold')">
+    <mat-icon>format_bold</mat-icon>
+  </button>
+  <button mat-icon-button (click)="formatText('italic')">
+    <mat-icon>format_italic</mat-icon>
+  </button>
+  <button mat-icon-button (click)="formatText('foreColor', selectedColor)">
+    <mat-icon>format_color_text</mat-icon>
+  </button>
+  <input [(ngModel)]="selectedColor" type="color" />
+  <button mat-icon-button (click)="formatText('fontSize', selectedFontSize)">
+    <mat-icon>format_size</mat-icon>
+  </button>
+  <mat-select [(ngModel)]="selectedFontSize">
+    <mat-option value="1">8</mat-option>
+    <mat-option value="2">10</mat-option>
+    <mat-option value="3">12</mat-option>
+    <mat-option value="4">14</mat-option>
+    <mat-option value="5">18</mat-option>
+    <mat-option value="6">24</mat-option>
+    <mat-option value="7">36</mat-option>
+  </mat-select>
+</div>
+<div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
