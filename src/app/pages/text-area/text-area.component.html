@@ -30,5 +30,11 @@
   <button mat-icon-button (click)="formatText('justifyRight')">
     <mat-icon>format_align_right</mat-icon>
   </button>
+  <button mat-icon-button (click)="formatText('insertOrderedList')">
+    <mat-icon>format_list_numbered</mat-icon>
+  </button>
+  <button mat-icon-button (click)="formatText('insertUnorderedList')">
+    <mat-icon>format_list_bulleted</mat-icon>
+  </button>
 </div>
 <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>

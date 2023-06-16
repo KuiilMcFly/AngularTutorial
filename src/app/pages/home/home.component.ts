@@ -5,7 +5,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   @Input() selectedDog: any;
   showComponent = false;
   
@@ -16,8 +15,8 @@ export class HomeComponent implements OnInit {
     this.selectedDog = dog;
   }
 
-  consolog() {
-    console.log(this.selectedDog) 
+  consolog(cane) {
+    console.log(cane) 
   }
   selectDog(ev){
     this.selectedDog = ev

@@ -15,6 +15,7 @@ export class TextAreaComponent {
     this.content = (event.target as HTMLElement).innerHTML;
   }
 
+
   formatText(command: string, value?: string) {
     document.execCommand(command, false, value);
     this.editor.nativeElement.focus();
