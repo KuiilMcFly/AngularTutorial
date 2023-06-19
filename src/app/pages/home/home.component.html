@@ -7,6 +7,6 @@
   </div>
 </div>
 <button (click)="consolog(selectedDog)">check status</button>
-<app-dog-modal [dog]="selectedDog" [(showComponent)]="showComponent" *ngIf="showComponent" [title]="selectedDog?.title"
+<app-dog-modal [dog]="selectedDog" (openSecondModalEvent)="onOpenSecondModal()" [(showComponent)]="showComponent" *ngIf="showComponent" [title]="selectedDog?.title"
   [descrizione]="selectedDog?.descrizione" [tipo]="selectedDog?.tipo" [immagine]="selectedDog?.immagine"
   [story]="selectedDog?.story"></app-dog-modal>

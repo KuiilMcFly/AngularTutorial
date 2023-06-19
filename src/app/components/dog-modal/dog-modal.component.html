@@ -7,9 +7,12 @@
                 <p>{{dog.story}}</p>
             </div>
 
-            <button class="btn-closeModal" (click)="showSecondModal(true)">Modifica</button>
+            <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>
             <br>
             <button class="btn-closeModal" (click)="hideComponente(false)">Chiudi modale</button>
         </div>
     </div>
   </div>
+
+
+  <app-pagina-modale [(showComponent)]="showSecondModal" *ngIf="showSecondModal"></app-pagina-modale>

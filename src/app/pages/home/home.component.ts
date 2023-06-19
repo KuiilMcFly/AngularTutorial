@@ -22,6 +22,12 @@ export class HomeComponent implements OnInit {
     this.selectedDog = ev
   }
 
+  showSecondModal: boolean = false;
+
+onOpenSecondModal() {
+  this.showSecondModal = true;
+}
+
   dogRace = [
     {
     razza: 'Labrador',
