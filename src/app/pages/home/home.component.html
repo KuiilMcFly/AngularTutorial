@@ -4,9 +4,9 @@
     <div *ngFor="let dog of dogRace; let i = index">
       <app-cards-container (dog)="selectedDog"  [dog]="dog" [(showComponent)]="showComponent" ></app-cards-container>
     
-      <button (click)="consolog(dog)">check status</button>
     </div>
   </div>
+  <button (click)="consolog(selectedDog)">check status</button>
   <app-dog-modal  [dog]="selectedDog" [(showComponent)]="showComponent" *ngIf="showComponent" [story]="dogRace" [immagine]="dogRace" [tipo]="dogRace" [title]="dogRace" [descrizione]="dogRace"></app-dog-modal>
 
 
