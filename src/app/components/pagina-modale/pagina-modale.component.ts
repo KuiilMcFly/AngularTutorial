@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pagina-modale',
@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagina-modale.component.scss']
 })
 export class PaginaModaleComponent implements OnInit {
+  @Input() showComponent:boolean;
+  @Output() showComponentChange=new EventEmitter<any>();
 
+
+  hideComponente(value:any) {
+    this.showComponent = value
+    this.showComponentChange.emit(value)
+  }
   constructor() { }
 
   ngOnInit() {

@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.component';
+import { ModificaModaleComponent } from './components/modifica-modale/modifica-modale.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.
     ImageViewerComponent,
     TextAreaComponent,
     PaginaModaleComponent,
+    ModificaModaleComponent,
 
   ],
   imports: [

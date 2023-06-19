@@ -19,6 +19,11 @@ export class DogModalComponent implements OnInit {
   @Output() showComponentChange=new EventEmitter<any>();
   // Metodo che disattiva la variabile booleana
   
+  showSecondModal(value: any){
+    this.showComponent = value
+    this.showComponentChange.emit(value)
+  }
+  
   hideComponente(value:any) {
     this.showComponent = value
     this.showComponentChange.emit(value)
