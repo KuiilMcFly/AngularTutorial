@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { ViewChild } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -72,6 +73,8 @@ onOpenSecondModal() {
     story:`Il Pastore Tedesco sviluppa un legame molto stretto con il padrone con il quale e vorrà stare il più possibile. Sebbene questa razza abbia bisogno di molta attenzione, è un cane molto leale con grande attitudine alla difesa e incorruttibile. E’ importante quindi socializzare il prima possibile il cane per avere un Pastore Tedesco equilibrato, altrimenti ci saranno problemi di fiducia e insicurezza. `,
   },
   ];
+
+  
   constructor() { }
 
   ngOnInit() {
