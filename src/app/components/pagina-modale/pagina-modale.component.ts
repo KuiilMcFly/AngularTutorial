@@ -14,6 +14,10 @@ export class PaginaModaleComponent implements OnInit {
     this.showComponentChange.emit(false);
   }
 
+  hideComponente(value: any) {
+    this.showComponent = value;
+    this.showComponentChange.emit(value);
+  }
   constructor() {}
 
   ngOnInit() {}
