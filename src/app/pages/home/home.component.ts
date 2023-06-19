@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
     this.selectedDog = dog;
   }
 
-  consolog(cane) {
-    console.log(cane) 
+  consolog(selectedDog) {
+    console.log(selectedDog) 
   }
   selectDog(ev){
     this.selectedDog = ev
