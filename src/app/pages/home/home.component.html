@@ -1,15 +1,12 @@
 <app-header></app-header>
 
 <div class="card-container">
-    <div *ngFor="let dog of dogRace; let i = index">
-      <app-cards-container (dog)="selectedDog"  [dog]="dog" [(showComponent)]="showComponent" ></app-cards-container>
-    
-    </div>
+  <div *ngFor="let dog of dogRace; let i = index">
+    <app-cards-container (selectedDog)="selectedDog = $event" [dog]="dog"
+      [(showComponent)]="showComponent"></app-cards-container>
   </div>
-  <button (click)="consolog(selectedDog)">check status</button>
-  <app-dog-modal  [dog]="selectedDog" [(showComponent)]="showComponent" *ngIf="showComponent" [story]="dogRace" [immagine]="dogRace" [tipo]="dogRace" [title]="dogRace" [descrizione]="dogRace"></app-dog-modal>
-
-
-
-
-  
+</div>
+<button (click)="consolog(selectedDog)">check status</button>
+<app-dog-modal [dog]="selectedDog" [(showComponent)]="showComponent" *ngIf="showComponent" [title]="selectedDog?.title"
+  [descrizione]="selectedDog?.descrizione" [tipo]="selectedDog?.tipo" [immagine]="selectedDog?.immagine"
+  [story]="selectedDog?.story"></app-dog-modal>
