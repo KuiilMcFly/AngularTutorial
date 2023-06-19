@@ -15,11 +15,11 @@ export class DogModalComponent implements OnInit {
   @Input() dog: any;
   @Input() showSecondModal: boolean;
   @Output() showComponentChange = new EventEmitter<any>();
-  @Output() openSecondModalEvent = new EventEmitter<void>();
-  
+
   openSecondModal() {
     this.showSecondModal = true;
     console.log('cliccato1');
+    this.showComponentChange.emit(this.showSecondModal);
   }
 
   hideComponente(value: any) {
@@ -30,8 +30,8 @@ export class DogModalComponent implements OnInit {
   OnClick() {
     console.log(this.title, 'log di dog');
   }
+
   constructor() {}
 
   ngOnInit() {}
-  @Input() items: Array<{ razza: string; descrizione: string }>;
 }

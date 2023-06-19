@@ -1,18 +1,17 @@
 <div class="modal">
-    <div class="modal-box">
-        <div class="box-content">
-            <h2>Descrizione della razza {{dog.title}} </h2>
-            <div class="flex-container">
-                <img src={{dog.immagine}} alt="">
-                <p>{{dog.story}}</p>
-            </div>
+  <div class="modal-box">
+    <div class="box-content">
+      <h2>Descrizione della razza {{dog.title}} </h2>
+      <div class="flex-container">
+        <img [src]="dog.immagine" alt="">
+        <p>{{dog.story}}</p>
+      </div>
 
-            <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>
-            <br>
-            <button class="btn-closeModal" (click)="hideComponente(false)">Chiudi modale</button>
-        </div>
+      <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>
+      <br>
+      <button class="btn-closeModal" (click)="hideComponente(false)">Chiudi modale</button>
     </div>
   </div>
+</div>
 
-
-  <app-pagina-modale [(showComponent)]="showSecondModal" *ngIf="showSecondModal"></app-pagina-modale>
+<app-pagina-modale [showComponent]="showSecondModal" *ngIf="showSecondModal"></app-pagina-modale>
