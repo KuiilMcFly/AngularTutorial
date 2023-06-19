@@ -48,6 +48,8 @@
         <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
       </div>
 
+      <p [innerHTML]="outputText"></p>
+
         <button class="btn-closeModal" (click)="hideComponente(false)">Chiudi modale</button>
     </div>
 </div>

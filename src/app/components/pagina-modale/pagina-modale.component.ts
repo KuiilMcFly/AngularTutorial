@@ -8,6 +8,7 @@ import { ViewChild } from '@angular/core';
 export class PaginaModaleComponent implements OnInit {
   @Input() showComponent: boolean;
   @Output() showComponentChange = new EventEmitter<boolean>();
+  outputText: string = 'testo da modificare';
 
   closeModal() {
     this.showComponent = false;
@@ -24,9 +25,10 @@ export class PaginaModaleComponent implements OnInit {
   selectedFontSize: string = '3';
 
   @ViewChild('editor', { static: false }) editor: ElementRef;
-  onInput(event: Event) {
-    this.content = (event.target as HTMLElement).innerHTML;
-  }
+ onInput(event: Event) {
+  this.content = (event.target as HTMLElement).innerHTML;
+  this.outputText = this.content;
+}
 
 
   formatText(command: string, value?: string) {
