@@ -60,7 +60,9 @@
   color: white;
 }
 
-.btn-closeModal{
-  align-content: space-between;
-  flex-direction: row;
+.btn-closeModal1{
+  display: flex;
+}
+.br {
+  padding: 15px;
 }
