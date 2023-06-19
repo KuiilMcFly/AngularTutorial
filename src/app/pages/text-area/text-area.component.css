@@ -11,4 +11,14 @@
   min-height: 200px;
   padding: 10px;
   overflow: auto;
+}
+
+.editor-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.editor-container p {
+  text-align: center;
 }/*# sourceMappingURL=text-area.component.css.map */
