@@ -1,6 +1,13 @@
-<div class="container">
-    <div class="image-container">
-        
-        <img class="magnifying-glass" #image src="../../../assets/Dogs/carlino.jpg" alt=""  (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()" (mousemove)="onMouseMove($event)" (wheel)="onWheel($event)">
-    </div>
+<div style="width: 40%; height: 80%; overflow: hidden; position: relative" #container>
+  <img
+    src="../../../assets//Dogs//carlino.jpg"
+    (click)="onClick($event)"
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="mouseMoveHandler($event)"
+    #img
+    [style.cursor]="isHovered ? 'crosshair' : 'auto'"
+    style="width: 50%; transition: all .3s; position: absolute"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onLeave()"
+  />
 </div>

@@ -1,66 +1,68 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
 
 @Component({
-  selector: 'app-image-viewer',
-  templateUrl: './image-viewer.component.html',
-  styleUrls: ['./image-viewer.component.css']
+  selector: "app-image-viewer",
+  templateUrl: "./image-viewer.component.html",
+  styleUrls: ["./image-viewer.component.scss"],
 })
-export class ImageViewerComponent {
-  @ViewChild('image', { static: false }) image: ElementRef;
+export class ImageViewerComponent implements OnInit {
+  [x: string]: any;
+  @Input() dog: any;
+  @Input() immagine: string | undefined;
 
-  private scale = 1;
-  private mouseX = 0;
-  private mouseY = 0;
+  isZoomed = false;
+  pos = { top: 0, left: 0, x: 0, y: 0 };
+  isHovered = false;
 
-  private isDragging = false;
-  private prevMouseX = 0;
-  private prevMouseY = 0;
+  @ViewChild("container", { static: true }) container: ElementRef;
+  @ViewChild("img", { static: true }) img: ElementRef;
 
-
-
-  onWheel(event: WheelEvent) {
-    event.preventDefault();
-    const delta = event.deltaY < 0 ? 1.1 : 0.9;
-    this.scale *= delta;
-
-    // Aggiungi queste due righe
-    this.mouseX = event.offsetX;
-    this.mouseY = event.offsetY;
-
-    this.updateTransform();
+  onClick(e) {
+    console.log(e.clientY, e.clientX);
+    this.isZoomed = !this.isZoomed;
+    if (this.isZoomed) {
+      this.container.nativeElement.style.overflow = "hidden";
+      this.img.nativeElement.style.width = "200%";
+      this.img.nativeElement.style.cursor = "zoom-out";
+      this.img.nativeElement.style.cursor = "zoom-out";
+      this.img.nativeElement.style.left = `-${e.clientX}`;
+      this.img.nativeElement.style.top = `-${e.clientY}`;
+    } else {
+      this.container.nativeElement.style.overflow = "hidden";
+      this.img.nativeElement.style.width = "100%";
+      this.img.nativeElement.style.cursor = "zoom-in";
+    }
   }
 
-  //movimento mouse
-
-onMouseDown(event: MouseEvent) {
-  event.preventDefault();
-  this.prevMouseX = event.clientX;
-  this.prevMouseY = event.clientY;
-  this.isDragging = true;
-  this.image.nativeElement.classList.add('grabbing');
-}
-
-onMouseUp() {
-  this.isDragging = false;
-  this.image.nativeElement.classList.remove('grabbing');
-}
-
-onMouseMove(event: MouseEvent) {
-  if (this.isDragging) {
-    const deltaX = -(event.clientX - this.prevMouseX);
-    const deltaY = -(event.clientY - this.prevMouseY);
-
-    this.mouseX += deltaX;
-    this.mouseY += deltaY;
-    this.updateTransform();
+  onMouseDown(e) {
+    this.pos = {
+      left: this.container.nativeElement.scrollLeft,
+      top: this.container.nativeElement.scrollTop,
+      x: e.clientX,
+      y: e.clientY,
+    };
   }
 
-  this.prevMouseX = event.clientX;
-  this.prevMouseY = event.clientY;
-}
+  mouseMoveHandler(e) {
+    const dx = (e.clientX - this.pos.x) * 2;
+    const dy = (e.clientY - this.pos.y) * 3;
 
-  private updateTransform() {
-    const transform = `scale(${this.scale}) translate(${this.mouseX * (1 - this.scale)}px, ${this.mouseY * (1 - this.scale)}px)`;
-    this.image.nativeElement.style.transform = transform;
+    this.container.nativeElement.scrollTop = this.pos.top - dy;
+    this.container.nativeElement.scrollLeft = this.pos.left - dx;
   }
+
+  onLeave() {
+    this.container.nativeElement.style.overflow = "hidden";
+    this.img.nativeElement.style.transform = "scale(1)";
+    this.img.nativeElement.style.cursor = "zoom-in";
+    this.isHovered = false;
+  }
+
+  onMouseEnter() {
+    this.isHovered = true;
+  }
+
+  constructor() {}
+
+  ngOnInit() {}
 }
