@@ -78,9 +78,8 @@ export class ImageViewerComponent implements OnInit {
     if (this.currentImageIndex >= this.images.length) {
       this.currentImageIndex = 0;
     }
-    this.currentImageSrc = this.images[this.currentImageIndex].src;
+    this.currentImageSrc = this.images[this.currentImageIndex].src; // Assegnazione del valore
   }
-
 
 
   constructor() {}
