@@ -62,7 +62,7 @@ export class ImageViewerComponent implements OnInit {
     this.isHovered = true;
   }
 
-  currentImageIndex: number = 0; // Indice dell'immagine corrente
+  currentImageIndex: number = 0;
   images: any[] = [
     { src: "../../../assets//Dogs//labrador.jpg" },
     { src: "../../../assets//Dogs//bulldog.jpg" },
@@ -70,7 +70,6 @@ export class ImageViewerComponent implements OnInit {
     { src: "../../../assets//Dogs//carlino.jpg" },
     { src: "../../../assets//Dogs//bassotto.png" },
     { src: "../../../assets//Dogs//pastoretedesco.png" },
-    // Aggiungi altre immagini all'array
   ];
 
   goToNextImage() {
@@ -78,10 +77,8 @@ export class ImageViewerComponent implements OnInit {
     if (this.currentImageIndex >= this.images.length) {
       this.currentImageIndex = 0;
     }
-    this.currentImageSrc = this.images[this.currentImageIndex].src; // Assegnazione del valore
+    //this.currentImageSrc = this.images[this.currentImageIndex].src;
   }
-
-
   constructor() {}
 
   ngOnInit() {}
