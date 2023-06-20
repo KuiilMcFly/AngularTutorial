@@ -74,15 +74,13 @@ export class ImageViewerComponent implements OnInit {
   ];
 
   goToNextImage() {
-    this.currentImageIndex++; // Incrementa l'indice dell'immagine corrente
-
+    this.currentImageIndex++;
     if (this.currentImageIndex >= this.images.length) {
-      this.currentImageIndex = 0; // Torna all'inizio dell'array se si raggiunge la fine
+      this.currentImageIndex = 0;
     }
-
-    const nextImageSrc = this.images[this.currentImageIndex].src;
-    this.img.nativeElement.src = nextImageSrc; // Aggiorna l'attributo src dell'elemento img con il percorso dell'immagine successiva
+    this.currentImageSrc = this.images[this.currentImageIndex].src;
   }
+
 
 
   constructor() {}

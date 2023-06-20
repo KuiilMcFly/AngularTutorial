@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'image', component: ImageViewerComponent },
   { path: 'textarea', component: TextAreaComponent },
+  { path: 'image/:immagine', component: ImageViewerComponent },
 
 
 ];

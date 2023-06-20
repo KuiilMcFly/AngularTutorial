@@ -1,20 +1,17 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{dog.razza}}</mat-card-title>
-    <mat-card-subtitle>{{dog.tipo}}</mat-card-subtitle>
+    <mat-card-title>{{ dog.razza }}</mat-card-title>
+    <mat-card-subtitle>{{ dog.tipo }}</mat-card-subtitle>
   </mat-card-header>
-  <a href="/image">
-    <img mat-card-image src={{dog.immagine}} alt="Dog Photo">
+  <a [href]="'/image/' + dog.immagine">
+    <img mat-card-image [src]="dog.immagine" alt="Dog Photo">
   </a>
   <mat-card-content>
-    <p>
-      {{dog.descrizione}}
-    </p>
+    <p>{{ dog.descrizione }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button  mat-button (dog)="selectedDog" (click)="showComponente(true)">DESCRIZIONE</button>
-
+    <button mat-button (click)="showComponente(true)">DESCRIZIONE</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
 </mat-card>
