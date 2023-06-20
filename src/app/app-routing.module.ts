@@ -12,8 +12,6 @@ const routes: Routes = [
   { path: 'textarea', component: TextAreaComponent },
   { path: 'image/:immagine', component: ImageViewerComponent },
   { path: 'image/image-selected', component: ImageSelectedComponent },
-
-
 ];
 
 @NgModule({
