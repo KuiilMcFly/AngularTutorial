@@ -1,22 +1,11 @@
 <div style="width: 40%; height: 80%; overflow: hidden; position: relative" #container>
-  <img
-    src="../../../assets//Dogs//labrador.jpg"
-    (click)="onClick($event)"
-    (mousedown)="onMouseDown($event)"
-    (mousemove)="mouseMoveHandler($event)"
-    #img
-    [style.cursor]="isHovered ? 'crosshair' : 'auto'"
-    style="width: 50%; transition: all .3s; position: absolute"
-    (mouseenter)="onMouseEnter()"
-    (mouseleave)="onLeave()"
-  />
-  <img
-    src="../../../assets/Dogs//arrow.jpg"
-    style="
-    width: 43%;
+  <img src="../../../assets//Dogs//labrador.jpg" (click)="onClick($event)" (mousedown)="onMouseDown($event)"
+    (mousemove)="mouseMoveHandler($event)" #img [style.cursor]="isHovered ? 'crosshair' : 'auto'"
+    style="width: 50%; transition: all .3s; position: absolute" (mouseenter)="onMouseEnter()"
+    (mouseleave)="onLeave()" />
+
+</div><img src="../../../assets/Dogs//arrow.jpg" style="
+    width: 10%;
     position: absolute;
-    left: 80%;
-    top: 25%; transform: translate(-50%, -50%); cursor: pointer;"
-    (click)="goToNextImage()"
-  />
-</div>
+    left: 50%;
+    top: 25%; transform: translate(-50%, -50%); cursor: pointer;" (click)="goToNextImage()" />
