@@ -1,9 +1,10 @@
 <div style="width: 40%; height: 80%; overflow: hidden; position: relative" #container>
+    <p>ciao</p>
   <img [src]="currentImageSrc" (click)="onClick($event)" (mousedown)="onMouseDown($event)"
     (mousemove)="mouseMoveHandler($event)" #img [style.cursor]="isHovered ? 'crosshair' : 'auto'"
     style="width: 50%; transition: all .3s; position: absolute" (mouseenter)="onMouseEnter()"
     (mouseleave)="onLeave()" />
 </div>
 
-<img src="../../../assets/Dogs/arrow.jpg" style="width: 10%; position: absolute; left: 50%; top: 25%;
+<img src="../../../assets/Dogs/arrow.jpg" style="width: 10%; position: relative; left: 50%; top: 25%;
   transform: translate(-50%, -50%); cursor: pointer;" (click)="goToNextImage()" />

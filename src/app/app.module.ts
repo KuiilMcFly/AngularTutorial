@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.component';
 import { ModificaModaleComponent } from './components/modifica-modale/modifica-modale.component';
+import { ImageSelectedComponent } from './pages/image-selected/image-selected.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ModificaModaleComponent } from './components/modifica-modale/modifica-m
     TextAreaComponent,
     PaginaModaleComponent,
     ModificaModaleComponent,
+    ImageSelectedComponent,
 
   ],
   imports: [
