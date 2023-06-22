@@ -1,0 +1,51 @@
+<div class="editor-container">
+    <p>Text Editor</p>
+  
+    <div class="toolbar">
+      <button mat-icon-button (click)="undo()" title="Annulla">
+        <mat-icon>undo</mat-icon>
+      </button>
+      <button mat-icon-button (click)="redo()" title="Avanti">
+        <mat-icon>redo</mat-icon>
+      </button>
+      <button mat-icon-button (click)="formatText('bold')" title="Grassetto">
+        <mat-icon>format_bold</mat-icon>
+      </button>
+      <button mat-icon-button (click)="formatText('italic')" title="Italico">
+        <mat-icon>format_italic</mat-icon>
+      </button>
+  
+      <input style="height: 40px;" [(ngModel)]="selectedColor" type="color"  (change)="formatText('foreColor', selectedColor)" />
+      
+      <select [(ngModel)]="selectedFontSize" (change)="changeFontSize()" (focus)="saveSelection()" (blur)="restoreSelection()">
+        <option value="1">8</option>
+        <option value="2">10</option>
+        <option value="3">12</option>
+        <option value="4">14</option>
+        <option value="5">18</option>
+        <option value="6">24</option>
+        <option value="7">36</option>
+      </select>
+      <button mat-icon-button (click)="formatText('underline')" title="Sottolinea">
+        <mat-icon>format_underlined</mat-icon>
+      </button>
+      <button mat-icon-button (click)="formatText('strikeThrough')" title="Strike">
+        <mat-icon>format_strikethrough</mat-icon>
+      </button>
+      <button mat-icon-button (click)="clearEditor()" title="Cancella tutto">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button (click)="formatText('justifyLeft')" title="Allinea a sinistra">
+        <mat-icon>format_align_left</mat-icon>
+      </button>
+      <button mat-icon-button (click)="formatText('justifyCenter')" title="Allinea al centro">
+        <mat-icon>format_align_center</mat-icon>
+      </button>
+      <button mat-icon-button (click)="formatText('justifyRight')" title="Allinea a destra">
+        <mat-icon>format_align_right</mat-icon>
+      </button>
+  
+    </div>
+    <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
+  </div>
+  

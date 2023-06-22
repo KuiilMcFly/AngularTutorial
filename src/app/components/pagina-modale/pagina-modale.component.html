@@ -1,57 +1,7 @@
 <div class="modal-background">
   <div class="modal1">
-    <div class="editor-container">
-      <p>Text Editor</p>
+   
+    <app-text-editor></app-text-editor>
 
-      <div class="toolbar">
-        <button mat-icon-button (click)="formatText('bold')">
-          <mat-icon>format_bold</mat-icon>
-        </button>
-        <button mat-icon-button (click)="formatText('italic')">
-          <mat-icon>format_italic</mat-icon>
-        </button>
-        <button mat-icon-button (click)="formatText('foreColor', selectedColor)">
-          <mat-icon>format_color_text</mat-icon>
-        </button>
-        <input [(ngModel)]="selectedColor" type="color" />
-        <button mat-icon-button (click)="formatText('fontSize', selectedFontSize)">
-          <mat-icon>format_size</mat-icon>
-        </button>
-        <mat-select [(ngModel)]="selectedFontSize">
-          <mat-option value="1">8</mat-option>
-          <mat-option value="2">10</mat-option>
-          <mat-option value="3">12</mat-option>
-          <mat-option value="4">14</mat-option>
-          <mat-option value="5">18</mat-option>
-          <mat-option value="6">24</mat-option>
-          <mat-option value="7">36</mat-option>
-        </mat-select>
-        <button mat-icon-button (click)="formatText('justifyLeft')">
-          <mat-icon>format_align_left</mat-icon>
-        </button>
-        <button mat-icon-button (click)="formatText('justifyCenter')">
-          <mat-icon>format_align_center</mat-icon>
-        </button>
-        <button mat-icon-button (click)="formatText('justifyRight')">
-          <mat-icon>format_align_right</mat-icon>
-        </button>
-        <button mat-icon-button (click)="formatText('insertOrderedList')">
-          <mat-icon>format_list_numbered</mat-icon>
-        </button>
-        <button mat-icon-button (click)="formatText('insertUnorderedList')">
-          <mat-icon>format_list_bulleted</mat-icon>
-        </button>
-        <button mat-icon-button (click)="createTable()">
-          <mat-icon>grid_on</mat-icon>
-        </button>
-      </div>
-      <div #editor class="editor" contenteditable="true" (input)="onInput($event)"></div>
-    </div>
-    <p [innerHTML]="outputText"></p>
-    <div class="btn-closeModal1">
-    <button class="btn-closeModal" (click)="OnClick()">Salva</button>
-    <div class="br"></div>
-    <button class="btn-closeModal" (click)="hideComponente(false)">Chiudi modale</button>
-    </div>
   </div>
 </div>

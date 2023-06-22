@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.component';
 import { ModificaModaleComponent } from './components/modifica-modale/modifica-modale.component';
 import { ImageSelectedComponent } from './pages/image-selected/image-selected.component';
+import { TextEditorComponent } from './components/text-editor/text-editor.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ImageSelectedComponent } from './pages/image-selected/image-selected.co
     PaginaModaleComponent,
     ModificaModaleComponent,
     ImageSelectedComponent,
+    TextEditorComponent,
 
   ],
   imports: [

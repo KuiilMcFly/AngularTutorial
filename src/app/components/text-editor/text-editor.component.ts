@@ -1,12 +1,12 @@
-import { Component, ElementRef } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+
 @Component({
-  selector: 'app-text-area.component',
-  templateUrl: './text-area.component.html',
-  styleUrls: ['./text-area.component.scss'],
+  selector: 'app-text-editor',
+  templateUrl: './text-editor.component.html',
+  styleUrls: ['./text-editor.component.scss']
 })
-export class TextAreaComponent {
-  
+export class TextEditorComponent  {
+
   content: string;
   selectedColor: string = '#000000';
   selectedFontSize: string = '3';
@@ -67,5 +67,4 @@ changeFontSize() {
   this.formatText('fontSize', this.selectedFontSize);
   this.restoreSelection();
 }
-  
 }
