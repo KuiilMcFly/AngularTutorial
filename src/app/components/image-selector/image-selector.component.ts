@@ -10,43 +10,43 @@ starImage = 1
   Image = [
     {
      src: 'https://picsum.photos/500/900/?random',
-     title: 'Titolo 1',
+     title: 'Image 1',
     },
     {
      src: 'https://picsum.photos/450/250/?random',
-     title: 'Titolo 2',
+     title: 'Image 2',
     },
     {
      src: 'https://picsum.photos/5000/5000/?random',
-     title: 'Titolo 3',
+     title: 'Image 3',
     },
     {
       src: 'https://picsum.photos/750/450/?random',
-      title: 'Titolo 4',
+      title: 'Image 4',
      },
      {
       src: 'https://picsum.photos/1500/1000/?random',
-      title: 'Titolo 5',
+      title: 'Image 5',
      },
      {
       src: 'https://picsum.photos/400/500/?random',
-      title: 'Titolo 6',
+      title: 'Image 6',
      },
      {
       src: 'https://picsum.photos/600/850/?random',
-      title: 'Titolo 7',
+      title: 'Image 7',
      },
      {
       src: 'https://picsum.photos/2000/2000/?random',
-      title: 'Titolo 8',
+      title: 'Image 8',
      },
      {
       src: 'https://picsum.photos/3500/5000/?random',
-      title: 'Titolo 9',
+      title: 'Image 9',
      },
      {
       src: 'https://picsum.photos/550/100/?random',
-      title: 'Titolo 10',
+      title: 'Image 10',
      },
   ]
 
