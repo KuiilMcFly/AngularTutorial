@@ -4,10 +4,12 @@
             <h2>Descrizione della razza {{dog.title}} </h2>
             <div class="flex-container">
                 <img src={{dog.immagine}} alt="">
-                <p>{{dog.story}}</p>
-            </div>
+                <app-text-editor [inputText]="inputText" [editable]="editable" (saveChanges)="onSavedText($event)"></app-text-editor>
 
-            <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal(true)">Modifica</button>
+            </div>
+            <button (click)="log()">ciao</button>
+            <button (click)="toggleEditButtonValue()">matita</button>
+            <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>
             <br>
             <button class="btn-closeModal" (click)="hideComponente(false)">Chiudi modale</button>
             <app-pagina-modale [(showComponent)]="showSecondModal" *ngIf="showSecondModal"></app-pagina-modale>

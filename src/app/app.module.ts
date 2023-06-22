@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -22,7 +22,11 @@ import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.
 import { ModificaModaleComponent } from './components/modifica-modale/modifica-modale.component';
 import { ImageSelectedComponent } from './pages/image-selected/image-selected.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
-import { ImageSelectorComponent } from './components/image-selector/image-selector.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,6 @@ import { ImageSelectorComponent } from './components/image-selector/image-select
     ModificaModaleComponent,
     ImageSelectedComponent,
     TextEditorComponent,
-    ImageSelectorComponent,
 
   ],
   imports: [
@@ -50,7 +53,11 @@ import { ImageSelectorComponent } from './components/image-selector/image-select
     MatButtonModule,
     FormsModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

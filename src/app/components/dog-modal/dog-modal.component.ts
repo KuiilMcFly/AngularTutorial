@@ -15,11 +15,34 @@ export class DogModalComponent implements OnInit {
   @Input() dog: any;
   @Input() showSecondModal: boolean;
   @Output() showComponentChange = new EventEmitter<any>();
+  @Input() inputText: string;
+  editable: boolean;
+
+
 
   openSecondModal() {
     this.showSecondModal = true;
     console.log('cliccato1');
     this.showComponentChange.emit(this.showSecondModal);
+  }
+
+  log() {
+   
+    console.log(this.dog, 'dog');
+    
+  }
+  onSavedText(modifiedText: string) {
+    this.inputText = modifiedText;
+    this.dog.story = modifiedText; // Aggiorna il testo nel modello 'dog.story'
+    this.editable = false;
+  }
+
+  saveChanges() {
+    // Salva le modifiche al testo dog.story
+    console.log('Modifiche salvate:', this.dog.Story);
+    // Puoi aggiungere ulteriori logica o azioni qui
+    
+    this.editable = false;
   }
 
   hideComponente(value: any) {
@@ -29,6 +52,9 @@ export class DogModalComponent implements OnInit {
 
   OnClick() {
     console.log(this.title, 'log di dog');
+  }
+  toggleEditButtonValue() {
+    this.editable = true
   }
 
   constructor() {}
