@@ -26,6 +26,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { ImageSelectorComponent } from './components/image-selector/image-selector.component';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { CommonModule } from '@angular/common';
     ModificaModaleComponent,
     ImageSelectedComponent,
     TextEditorComponent,
-
+    ImageSelectorComponent
   ],
   imports: [
     BrowserModule,
