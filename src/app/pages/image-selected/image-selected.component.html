@@ -1,1 +1,6 @@
-<p>image-selected works!</p>
+<div>
+    <img [src]="'../../../assets/Dogs/' + dog.immagine" alt="Selected Image">
+  </div>
+  
+  <img src="../../../assets/Dogs/arrow.jpg" style="width: 10%; position: absolute; top: 50%; transform: translate(-50%, -50%); cursor: pointer; left: 10px;" (click)="goToPreviousImage()" />
+  <img src="../../../assets/Dogs/arrow.jpg" style="width: 10%; position: absolute; top: 50%; transform: translate(-50%, -50%); cursor: pointer; right: 10px; transform: scaleX(-1);" (click)="goToNextImage()" />

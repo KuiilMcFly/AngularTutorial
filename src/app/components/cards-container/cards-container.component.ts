@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cards-container',
   templateUrl: './cards-container.component.html',
@@ -21,9 +21,10 @@ export class CardsContainerComponent implements OnInit {
     this.showComponent = value;
     this.showComponentChange.emit(value);
     this.selectedDog.emit(this.dog);
+    this.router.navigate(['/image', this.dog.id]);
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 

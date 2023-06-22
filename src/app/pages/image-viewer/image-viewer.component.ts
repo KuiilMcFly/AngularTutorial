@@ -63,14 +63,7 @@ export class ImageViewerComponent implements OnInit {
   }
 
   currentImageIndex: number = 0;
-  images: any[] = [
-    { src: "../../../assets//Dogs//labrador.jpg" },
-    { src: "../../../assets//Dogs//bulldog.jpg" },
-    { src: "../../../assets//Dogs//dalmata.png" },
-    { src: "../../../assets//Dogs//carlino.jpg" },
-    { src: "../../../assets//Dogs//bassotto.png" },
-    { src: "../../../assets//Dogs//pastoretedesco.png" },
-  ];
+  
 
   goToNextImage() {
     this.currentImageIndex++;

@@ -68,6 +68,11 @@ export class PaginaModaleComponent implements OnInit {
       this.insertNodeAtCaret(table);
     }
   }
+
+  OnClick() {
+    console.log(this.editor);
+    
+  }
   constructor() {}
 
   ngOnInit() {}

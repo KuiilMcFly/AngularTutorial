@@ -29,28 +29,20 @@ export class TextAreaComponent {
       range.insertNode(node);
     }
   }
-  createTable() {
-    const table = document.createElement('table');
-    table.setAttribute('style', 'border-collapse: collapse;');
-  
-    const rowsInput = prompt('Inserisci il numero di righe:', '2');
-    const colsInput = prompt('Inserisci il numero di colonne:', '2');
-  
-    const rows = parseInt(rowsInput, 10);
-    const cols = parseInt(colsInput, 10);
-  
-    if (rows && cols) {
-      for (let i = 0; i < rows; i++) {
-        const row = document.createElement('tr');
-        for (let j = 0; j < cols; j++) {
-          const cell = document.createElement('td');
-          cell.innerHTML = '&nbsp;';
-          cell.setAttribute('style', 'border: 1px solid black; padding: 5px;');
-          row.appendChild(cell);
-        }
-        table.appendChild(row);
-      }
-      this.insertNodeAtCaret(table);
-    }
+
+  undo() {
+    document.execCommand('undo', false, null);
+    this.editor.nativeElement.focus();
   }
+  
+  redo() {
+    document.execCommand('redo', false, null);
+    this.editor.nativeElement.focus();
+  }
+
+  clearEditor() {
+    this.editor.nativeElement.innerHTML = '';
+    this.editor.nativeElement.focus();
+  }
+  
 }

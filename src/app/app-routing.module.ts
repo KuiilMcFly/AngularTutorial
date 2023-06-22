@@ -8,10 +8,8 @@ import { ImageSelectedComponent } from './pages/image-selected/image-selected.co
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'image', component: ImageViewerComponent },
   { path: 'textarea', component: TextAreaComponent },
-  { path: 'image/:immagine', component: ImageViewerComponent },
-  { path: 'image/image-selected', component: ImageSelectedComponent },
+  { path: 'image-selected', component: ImageSelectedComponent },
 ];
 
 @NgModule({

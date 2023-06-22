@@ -4,7 +4,7 @@
     <mat-card-title>{{ dog.razza }}</mat-card-title>
     <mat-card-subtitle>{{ dog.tipo }}</mat-card-subtitle>
   </mat-card-header>
-  <a [href]="'/image/' + dog.immagine">
+  <a [href]="'/image-selected?image=' + dog.immagine">
     <img mat-card-image [src]="dog.immagine" alt="Dog Photo">
   </a>
   <mat-card-content>

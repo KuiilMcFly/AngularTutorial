@@ -6,6 +6,7 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  selectedDogImage: string;
   @Input() selectedDog: any;
   showComponent = false;
   
