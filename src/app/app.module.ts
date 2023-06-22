@@ -22,6 +22,11 @@ import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.
 import { ModificaModaleComponent } from './components/modifica-modale/modifica-modale.component';
 import { ImageSelectedComponent } from './pages/image-selected/image-selected.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
