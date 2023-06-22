@@ -22,6 +22,7 @@ import { PaginaModaleComponent } from './components/pagina-modale/pagina-modale.
 import { ModificaModaleComponent } from './components/modifica-modale/modifica-modale.component';
 import { ImageSelectedComponent } from './pages/image-selected/image-selected.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
+import { ImageSelectorComponent } from './components/image-selector/image-selector.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
     ModificaModaleComponent,
     ImageSelectedComponent,
     TextEditorComponent,
+    ImageSelectorComponent,
 
   ],
   imports: [
