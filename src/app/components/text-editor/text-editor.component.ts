@@ -1,36 +1,63 @@
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-
+import { Component, OnInit, ViewChild, ElementRef, Input, EventEmitter, Output, SimpleChanges} from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { CustomActionModalComponent } from '../custom-action-modal/custom-action-modal.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-text-editor',
   templateUrl: './text-editor.component.html',
   styleUrls: ['./text-editor.component.scss']
 })
 export class TextEditorComponent  {
-
+  dogStory: string = '';
   content: string;
   selectedColor: string = '#000000';
   selectedFontSize: string = '3';
-
-
+  @Input() inputText: SafeHtml;
+  @Input() editable: boolean;
   savedSelection: Range;
+  @Input() modifiedText: string;
+  @Output() saveChanges = new EventEmitter<string>();
 
+
+
+  onInput(event: Event) {
+    this.modifiedText = (event.target as HTMLElement).innerHTML;
+  }
+
+  savedText() {
+    const editorContent = this.editor.nativeElement.innerHTML;
+    this.saveChanges.emit(editorContent);
+    this.editable = false;
+  }
   saveSelection() {
     const sel = window.getSelection();
     if (sel.getRangeAt && sel.rangeCount) {
       this.savedSelection = sel.getRangeAt(0);
     }
   }
+ 
+
+  
+  
 
   restoreSelection() {
-    const sel = window.getSelection();
+    const sel = window.getSelection();  
     sel.removeAllRanges();
     sel.addRange(this.savedSelection);
   }
 
   @ViewChild('editor', { static: false }) editor: ElementRef;
-  onInput(event: Event) {
-    this.content = (event.target as HTMLElement).innerHTML;
+ 
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.inputText && !changes.inputText.isFirstChange()) {
+      if (!this.editable) {
+        const editor = this.editor.nativeElement;
+        editor.innerHTML = this.inputText;
+      }
+    }
   }
+
 
 
   formatText(command: string, value?: string) {
@@ -62,9 +89,32 @@ export class TextEditorComponent  {
     this.editor.nativeElement.focus();
   }
 
+  customActionUpperCase() {
+    const selectedText = window.getSelection().toString();
+    const upperCaseText = selectedText.toUpperCase();
+    document.execCommand('insertText', false, upperCaseText);
+  }
+
   
 changeFontSize() {
   this.formatText('fontSize', this.selectedFontSize);
   this.restoreSelection();
 }
+
+constructor(private sanitizer: DomSanitizer) { }
+
+openCustomActionModal() {
+  const dialogRef = this.dialog.open(CustomActionModalComponent);
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.applyCustomAction(result);
+    }
+  });
+}
+applyCustomAction(customAction) {
+  customAction.action();
+}
+
+
 }
