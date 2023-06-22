@@ -1,0 +1,17 @@
+<div class="image-viewer">
+  <div class="selected-image">
+    <img [src]="Image[starImage - 1].src" alt="{{ Image[starImage - 1].title }}">
+    <h2>{{ Image[starImage - 1].title }}</h2>
+  </div>
+  <div class="sidebar">
+    <h2>Immagini</h2>
+    <div class="thumbnails">
+      <div class="thumbnail" *ngFor="let img of Image; let i = index" [class.active]="starImage === i + 1" (click)="starImage = i + 1">
+        <img [src]="img.src" alt="{{ img.title }}">
+        <h3>{{ img.title }}</h3>
+      </div>
+    </div>
+  </div>
+
+
+</div>
