@@ -3,23 +3,23 @@
   <p>Text Editor</p>
 
   <div class="toolbar">
-    <button mat-icon-button (click)="undo()">
+    <button mat-icon-button (click)="undo()" title="Annulla">
       <mat-icon>undo</mat-icon>
     </button>
-    <button mat-icon-button (click)="redo()">
+    <button mat-icon-button (click)="redo()" title="Avanti">
       <mat-icon>redo</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('bold')">
+    <button mat-icon-button (click)="formatText('bold')" title="Grassetto">
       <mat-icon>format_bold</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('italic')">
+    <button mat-icon-button (click)="formatText('italic')" title="Italico">
       <mat-icon>format_italic</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('foreColor', selectedColor)">
+    <button mat-icon-button (click)="formatText('foreColor', selectedColor)" title="Colore">
       <mat-icon>format_color_text</mat-icon>
     </button>
     <input [(ngModel)]="selectedColor" type="color" />
-    <button mat-icon-button (click)="formatText('fontSize', selectedFontSize)">
+    <button mat-icon-button (click)="formatText('fontSize', selectedFontSize)" title="Dimensione testo">
       <mat-icon>format_size</mat-icon>
     </button>
     <mat-select style="width: 50px;" [(ngModel)]="selectedFontSize" >
@@ -31,22 +31,22 @@
       <mat-option value="6">24</mat-option>
       <mat-option value="7">36</mat-option>
     </mat-select>
-    <button mat-icon-button (click)="formatText('underline')">
+    <button mat-icon-button (click)="formatText('underline')" title="Sottolinea">
       <mat-icon>format_underlined</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('strikeThrough')">
+    <button mat-icon-button (click)="formatText('strikeThrough')" title="Strike">
       <mat-icon>format_strikethrough</mat-icon>
     </button>
-    <button mat-icon-button (click)="clearEditor()">
+    <button mat-icon-button (click)="clearEditor()" title="Cancella tutto">
       <mat-icon>delete</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('justifyLeft')">
+    <button mat-icon-button (click)="formatText('justifyLeft')" title="Allinea a sinistra">
       <mat-icon>format_align_left</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('justifyCenter')">
+    <button mat-icon-button (click)="formatText('justifyCenter')" title="Allinea al centro">
       <mat-icon>format_align_center</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('justifyRight')">
+    <button mat-icon-button (click)="formatText('justifyRight')" title="Allinea a destra">
       <mat-icon>format_align_right</mat-icon>
     </button>
    
