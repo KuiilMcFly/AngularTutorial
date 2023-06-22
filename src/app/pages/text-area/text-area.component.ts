@@ -17,9 +17,14 @@ export class TextAreaComponent {
   }
 
 
-  formatText(command: string, value?: string) {
+  /*formatText(command: string, value?: string) {
     document.execCommand(command, false, value);
     this.editor.nativeElement.focus();
+  }*/
+
+  changeFontSize() {
+    const fontSize = this.selectedFontSize + 'px';
+    this.editor.nativeElement.style.fontSize = fontSize;
   }
 
   insertNodeAtCaret(node: Node) {
@@ -35,7 +40,7 @@ export class TextAreaComponent {
     document.execCommand('undo', false, null);
     this.editor.nativeElement.focus();
   }
-  
+
   redo() {
     document.execCommand('redo', false, null);
     this.editor.nativeElement.focus();
@@ -46,9 +51,9 @@ export class TextAreaComponent {
     this.editor.nativeElement.focus();
   }
 
-  
 
 
-  
-  
+
+
+
 }
