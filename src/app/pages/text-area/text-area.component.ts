@@ -47,27 +47,6 @@ export class TextAreaComponent {
   }
 
 
-  saveSelection() {
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      this.savedSelection = selection.getRangeAt(0);
-    }
-  }
-
-  restoreSelection() {
-    const selection = window.getSelection();
-    if (this.savedSelection && selection) {
-      selection.removeAllRanges();
-      selection.addRange(this.savedSelection);
-    }
-  }
-
-  openedChange(opened: boolean) {
-    if (opened) {
-      this.saveSelection();
-    } else {
-      this.restoreSelection();
-    }
-  }
+  
   
 }
