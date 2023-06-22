@@ -15,10 +15,8 @@
     <button mat-icon-button (click)="formatText('italic')" title="Italico">
       <mat-icon>format_italic</mat-icon>
     </button>
-    <button mat-icon-button (click)="formatText('foreColor', selectedColor)" title="Colore">
-      <mat-icon>format_color_text</mat-icon>
-    </button>
-    <input [(ngModel)]="selectedColor" type="color" />
+    
+    <input [(ngModel)]="selectedColor" type="color" (focus)="saveSelection()" (blur)="restoreSelection()" (change)="formatText('foreColor', selectedColor)" />
     <button mat-icon-button (click)="formatText('fontSize', selectedFontSize)" title="Dimensione testo">
       <mat-icon>format_size</mat-icon>
     </button>
