@@ -6,10 +6,25 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./text-area.component.scss'],
 })
 export class TextAreaComponent {
-  savedSelection: Range | null = null;
   content: string;
   selectedColor: string = '#000000';
   selectedFontSize: string = '3';
+
+
+  savedSelection: Range;
+
+  saveSelection() {
+    const sel = window.getSelection();
+    if (sel.getRangeAt && sel.rangeCount) {
+      this.savedSelection = sel.getRangeAt(0);
+    }
+  }
+
+  restoreSelection() {
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(this.savedSelection);
+  }
 
   @ViewChild('editor', { static: false }) editor: ElementRef;
   onInput(event: Event) {
@@ -17,14 +32,9 @@ export class TextAreaComponent {
   }
 
 
-  /*formatText(command: string, value?: string) {
+  formatText(command: string, value?: string) {
     document.execCommand(command, false, value);
     this.editor.nativeElement.focus();
-  }*/
-
-  changeFontSize() {
-    const fontSize = this.selectedFontSize + 'px';
-    this.editor.nativeElement.style.fontSize = fontSize;
   }
 
   insertNodeAtCaret(node: Node) {
@@ -40,7 +50,7 @@ export class TextAreaComponent {
     document.execCommand('undo', false, null);
     this.editor.nativeElement.focus();
   }
-
+  
   redo() {
     document.execCommand('redo', false, null);
     this.editor.nativeElement.focus();
@@ -51,9 +61,14 @@ export class TextAreaComponent {
     this.editor.nativeElement.focus();
   }
 
+  
+changeFontSize() {
+  this.formatText('fontSize', this.selectedFontSize);
+  this.restoreSelection();
+}
+  
 
 
-
-
-
+  
+  
 }

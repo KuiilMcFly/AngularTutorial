@@ -16,28 +16,17 @@
       <mat-icon>format_italic</mat-icon>
     </button>
 
-    <input [(ngModel)]="selectedColor" type="color" (focus)="saveSelection()" (blur)="restoreSelection()" (change)="formatText('foreColor', selectedColor)" />
-    <button mat-icon-button (click)="formatText('fontSize', selectedFontSize)" title="Dimensione testo">
-      <mat-icon>format_size</mat-icon>
-    </button>
-    <!--<mat-select style="width: 50px;" [(ngModel)]="selectedFontSize" >
-      <mat-option  value="1">8</mat-option>
-      <mat-option value="2">10</mat-option>
-      <mat-option value="3">12</mat-option>
-      <mat-option value="4">14</mat-option>
-      <mat-option value="5">18</mat-option>
-      <mat-option value="6">24</mat-option>
-      <mat-option value="7">36</mat-option>
-    </mat-select> -->
-    <mat-select style="width: 50px;" [(ngModel)]="selectedFontSize" (selectionChange)="changeFontSize()">
-      <mat-option value="1">8</mat-option>
-      <mat-option value="2">10</mat-option>
-      <mat-option value="3">12</mat-option>
-      <mat-option value="4">14</mat-option>
-      <mat-option value="5">18</mat-option>
-      <mat-option value="6">24</mat-option>
-      <mat-option value="7">36</mat-option>
-    </mat-select>
+    <input [(ngModel)]="selectedColor" type="color"  (change)="formatText('foreColor', selectedColor)" />
+    
+    <select [(ngModel)]="selectedFontSize" (change)="changeFontSize()" (focus)="saveSelection()" (blur)="restoreSelection()">
+      <option value="1">8</option>
+      <option value="2">10</option>
+      <option value="3">12</option>
+      <option value="4">14</option>
+      <option value="5">18</option>
+      <option value="6">24</option>
+      <option value="7">36</option>
+    </select>
     <button mat-icon-button (click)="formatText('underline')" title="Sottolinea">
       <mat-icon>format_underlined</mat-icon>
     </button>
