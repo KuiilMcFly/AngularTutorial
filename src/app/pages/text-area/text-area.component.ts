@@ -6,6 +6,7 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./text-area.component.scss'],
 })
 export class TextAreaComponent {
+  
   content: string;
   selectedColor: string = '#000000';
   selectedFontSize: string = '3';
