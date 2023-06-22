@@ -46,32 +46,9 @@ export class TextAreaComponent {
     this.editor.nativeElement.focus();
   }
 
-  saveSelection() {
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      this.savedSelection = selection.getRangeAt(0);
-    }
-  }
+  
 
-  restoreSelection() {
-    const selection = window.getSelection();
-    if (this.savedSelection && selection) {
-      selection.removeAllRanges();
-      selection.addRange(this.savedSelection);
-    }
-  }
 
-  deselectText() {
-    const selection = window.getSelection();
-    if (selection) {
-      selection.removeAllRanges();
-    }
-  }
-
-  restoreSelectionAndDeselect() {
-    this.restoreSelection();
-    this.deselectText();
-  }
   
   
 }
