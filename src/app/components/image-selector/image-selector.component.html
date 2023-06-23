@@ -1,18 +1,18 @@
-
 <div id="image-viewer-container">
   <div class="image-viewer">
     <div class="selected-image">
-      <img [src]="Image[starImage - 1].src" alt="{{ Image[starImage - 1].title }}">
-      <h2>{{ Image[starImage - 1].title }}</h2>
+      <img *ngFor="let img of selectedImages" [src]="img.src" alt="{{ img.title }}">
+      <h2>{{ selectedImages.length }} Immagini Selezionate</h2>
     </div>
-    <div class="sidebar">
+
+  </div>
+</div>
+<div class="sidebar">
       <h2>Immagini</h2>
       <div class="thumbnails">
-        <div class="thumbnail" *ngFor="let img of Image; let i = index" [class.active]="starImage === i + 1" (click)="starImage = i + 1">
+        <div class="thumbnail" *ngFor="let img of Image; let i = index" [class.active]="img.selected" (click)="toggleImageSelection(img)">
           <img [src]="img.src" alt="{{ img.title }}">
           <h3>{{ img.title }}</h3>
         </div>
       </div>
     </div>
-  </div>
-</div>

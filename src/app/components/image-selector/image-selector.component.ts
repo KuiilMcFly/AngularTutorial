@@ -49,6 +49,19 @@ starImage = 1
       title: 'Image 10',
      },
   ]
+  selectedImages: any[] = [];
+
+  toggleImageSelection(image: any) {
+    image.selected = !image.selected;
+    if (image.selected) {
+      this.selectedImages.push(image);
+    } else {
+      const index = this.selectedImages.indexOf(image);
+      if (index !== -1) {
+        this.selectedImages.splice(index, 1);
+      }
+    }
+  }
 
   constructor() { }
 
