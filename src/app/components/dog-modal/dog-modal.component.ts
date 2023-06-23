@@ -18,7 +18,7 @@ export class DogModalComponent implements OnInit {
   @Output() showComponentChange = new EventEmitter<any>();
   @Input() inputText: string;
   editable: boolean;
-
+  
 
 
   openSecondModal() {
