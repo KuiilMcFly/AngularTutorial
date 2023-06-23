@@ -1,18 +1,25 @@
-<div id="image-viewer-container">
+<div id="image-viewer-container" [class.grid-layout]="gridImagesEnabled">
   <div class="image-viewer">
     <div class="selected-image">
-      <img *ngFor="let img of selectedImages" [src]="img.src" alt="{{ img.title }}">
       <h2>{{ selectedImages.length }} Immagini Selezionate</h2>
-    </div>
+      <div class="image-grid">
+        <div *ngFor="let img of selectedImages" class="grid-item">
 
-  </div>
-</div>
-<div class="sidebar">
-      <h2>Immagini</h2>
-      <div class="thumbnails">
-        <div class="thumbnail" *ngFor="let img of Image; let i = index" [class.active]="img.selected" (click)="toggleImageSelection(img)">
-          <img [src]="img.src" alt="{{ img.title }}">
+          <img [src]="img.src" [alt]="img.title">
           <h3>{{ img.title }}</h3>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="sidebar">
+  <h2>Immagini</h2>
+  <div class="thumbnails">
+    <div class="thumbnail" *ngFor="let img of Image; let i = index" [class.active]="isSelected(img)"
+      (click)="toggleImageSelection(img)">
+      <img [src]="img.src" [alt]="img.title">
+      <h3>{{ img.title }}</h3>
+    </div>
+  </div>
+</div>
+<button class="btn-griglia" (click)="gridImages()">Griglia Immagini</button>

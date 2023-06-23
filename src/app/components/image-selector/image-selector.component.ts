@@ -50,6 +50,7 @@ starImage = 1
      },
   ]
   selectedImages: any[] = [];
+  gridImagesEnabled: boolean = false;
 
   toggleImageSelection(image: any) {
     image.selected = !image.selected;
@@ -61,6 +62,14 @@ starImage = 1
         this.selectedImages.splice(index, 1);
       }
     }
+  }
+
+  isSelected(image: any): boolean {
+    return this.selectedImages.includes(image);
+  }
+
+  gridImages() {
+    this.gridImagesEnabled = !this.gridImagesEnabled;
   }
 
   constructor() { }
