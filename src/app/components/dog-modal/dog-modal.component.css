@@ -28,12 +28,17 @@
 .modal .modal-box .box-content .flex-container {
   display: flex;
   gap: 50px;
+  align-items: center;
 }
 .modal .modal-box .box-content .flex-container img {
   width: 200px;
   border: solid 2px black;
   height: 200px;
   border-radius: 100%;
+}
+.modal .modal-box .box-content .editButton {
+  padding: 10px;
+  border-radius: 15px;
 }
 .modal .modal-box .box-content .btn-closeModal {
   padding: 10px;

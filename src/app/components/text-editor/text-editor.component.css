@@ -8,6 +8,7 @@
 .editor {
   border: 1px solid #ccc;
   min-height: 200px;
+  max-width: 600px;
   padding: 10px;
   overflow: auto;
 }
@@ -20,4 +21,22 @@
 }
 .editor-container p {
   text-align: center;
+}
+.editor-container .buttonContainer {
+  display: flex;
+  margin-top: 10px;
+}
+.editor-container .buttonContainer .EditorButton {
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 100px;
+}
+.editor-container .buttonContainer #saveButton {
+  background-color: rgb(52, 52, 160);
+  color: white;
+}
+.editor-container .buttonContainer #undoButton {
+  background-color: rgb(182, 45, 45);
+  color: white;
 }/*# sourceMappingURL=text-editor.component.css.map */

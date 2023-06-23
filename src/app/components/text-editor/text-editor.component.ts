@@ -19,8 +19,6 @@ export class TextEditorComponent implements OnInit {
   @Output() saveChanges = new EventEmitter<string>();
  
 
-
-
   onInput(event: Event) {
     this.modifiedText = (event.target as HTMLElement).innerHTML;
   }
@@ -37,9 +35,6 @@ export class TextEditorComponent implements OnInit {
     }
   }
  
-
-  
-  
 
   restoreSelection() {
     const sel = window.getSelection();  

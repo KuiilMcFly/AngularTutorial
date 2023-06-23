@@ -29,6 +29,7 @@ position: fixed;
     .flex-container {
       display: flex;
       gap: 50px;
+      align-items: center;
       img {
         width: 200px;
         border: solid 2px black;
@@ -36,6 +37,12 @@ position: fixed;
         border-radius: 100%;
       }
     }
+
+    .editButton {
+      padding: 10px;
+      border-radius: 15px;
+    }
+    
     .btn-closeModal {
       padding: 10px;
       background-color: rgb(60, 60, 169);
