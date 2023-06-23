@@ -7,16 +7,17 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './text-editor.component.html',
   styleUrls: ['./text-editor.component.scss']
 })
-export class TextEditorComponent  {
+export class TextEditorComponent implements OnInit {
   dogStory: string = '';
   content: string;
   selectedColor: string = '#000000';
   selectedFontSize: string = '3';
-  @Input() inputText: SafeHtml;
+  @Input() inputText: string;
   @Input() editable: boolean;
   savedSelection: Range;
   @Input() modifiedText: string;
   @Output() saveChanges = new EventEmitter<string>();
+ 
 
 
 
@@ -103,18 +104,14 @@ changeFontSize() {
 
 constructor(private sanitizer: DomSanitizer) { }
 
-openCustomActionModal() {
-  const dialogRef = this.dialog.open(CustomActionModalComponent);
 
-  dialogRef.afterClosed().subscribe(result => {
-    if (result) {
-      this.applyCustomAction(result);
-    }
-  });
-}
 applyCustomAction(customAction) {
   customAction.action();
 }
 
+ngOnInit(): void {
+console.log(this.inputText);
+
+}
 
 }

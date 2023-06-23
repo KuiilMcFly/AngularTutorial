@@ -4,7 +4,7 @@
             <h2>Descrizione della razza {{dog.title}} </h2>
             <div class="flex-container">
                 <img src={{dog.immagine}} alt="">
-                <app-text-editor [inputText]="inputText" [editable]="editable" (saveChanges)="onSavedText($event)"></app-text-editor>
+                <app-text-editor [inputText]="dog.story" [editable]="editable" (saveChanges)="onSavedText($event)"></app-text-editor>
 
             </div>
             <button (click)="log()">ciao</button>

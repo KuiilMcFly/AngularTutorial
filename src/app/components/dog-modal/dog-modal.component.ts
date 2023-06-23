@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-dog-modal',
   templateUrl: './dog-modal.component.html',
@@ -29,7 +30,9 @@ export class DogModalComponent implements OnInit {
   log() {
    
     console.log(this.dog, 'dog');
-    
+
+    console.log(this.inputText, 'log' );
+   
   }
   onSavedText(modifiedText: string) {
     this.inputText = modifiedText;
