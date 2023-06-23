@@ -49,6 +49,9 @@
       <button mat-icon-button (click)="formatText('justifyRight')" title="Allinea a destra">
         <mat-icon>format_align_right</mat-icon>
       </button>
+      <button mat-icon-button (click)="formatText('justifyFull')" title="Allinea giustificato">
+        <mat-icon>format_align_justify</mat-icon>
+      </button>
   
     </div>
     <div #editor class="editor" contenteditable="true" (input)="onInput($event)" [innerHTML]="inputText"></div>
