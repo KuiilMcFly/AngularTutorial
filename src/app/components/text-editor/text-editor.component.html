@@ -54,7 +54,7 @@
     <div #editor class="editor" contenteditable="true" (input)="onInput($event)" [innerHTML]="inputText"></div>
     <div class="buttonContainer">
       <button id="saveButton" class="EditorButton" (click)="savedText()">Salva</button>
-      <button id="undoButton" class="EditorButton" (click)="editable = !editable">Annulla</button>
+      <button id="undoButton" class="EditorButton" (click)="cancelChanges()">Annulla</button>
     </div>
   </div>
   

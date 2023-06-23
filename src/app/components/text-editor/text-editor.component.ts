@@ -17,6 +17,7 @@ export class TextEditorComponent implements OnInit {
   savedSelection: Range;
   @Input() modifiedText: string;
   @Output() saveChanges = new EventEmitter<string>();
+  starterText: string = "";
  
 
   onInput(event: Event) {
@@ -28,6 +29,16 @@ export class TextEditorComponent implements OnInit {
     this.saveChanges.emit(editorContent);
     this.editable = false;
   }
+
+  cancelChanges() {
+    // this.editor.nativeElement.innerHTML = this.inputText;
+    this.saveChanges.emit(this.starterText);
+    this.editable = false;
+    // this.ngOnChanges(null);
+  }
+  
+
+  
   saveSelection() {
     const sel = window.getSelection();
     if (sel.getRangeAt && sel.rangeCount) {
@@ -47,12 +58,13 @@ export class TextEditorComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.inputText && !changes.inputText.isFirstChange()) {
-      if (!this.editable) {
+      if (!this.editable && this.editor && this.editor.nativeElement) {
         const editor = this.editor.nativeElement;
         editor.innerHTML = this.inputText;
       }
     }
   }
+  
 
 
 
@@ -106,7 +118,7 @@ applyCustomAction(customAction) {
 
 ngOnInit(): void {
 console.log(this.inputText);
-
+this.starterText = this.inputText;
 }
 
 }
