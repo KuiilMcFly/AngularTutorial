@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, EventEmitter, Output, SimpleChanges} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, EventEmitter, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { CustomActionModalComponent } from '../custom-action-modal/custom-action-modal.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -18,7 +18,7 @@ export class TextEditorComponent implements OnInit {
   @Input() modifiedText: string;
   @Output() saveChanges = new EventEmitter<string>();
   starterText: string = "";
- 
+
 
   onInput(event: Event) {
     this.modifiedText = (event.target as HTMLElement).innerHTML;
@@ -36,25 +36,25 @@ export class TextEditorComponent implements OnInit {
     this.editable = false;
     // this.ngOnChanges(null);
   }
-  
 
-  
+
+
   saveSelection() {
     const sel = window.getSelection();
     if (sel.getRangeAt && sel.rangeCount) {
       this.savedSelection = sel.getRangeAt(0);
     }
   }
- 
+
 
   restoreSelection() {
-    const sel = window.getSelection();  
+    const sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(this.savedSelection);
   }
 
   @ViewChild('editor', { static: false }) editor: ElementRef;
- 
+
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.inputText && !changes.inputText.isFirstChange()) {
@@ -64,7 +64,7 @@ export class TextEditorComponent implements OnInit {
       }
     }
   }
-  
+
 
 
 
@@ -86,7 +86,7 @@ export class TextEditorComponent implements OnInit {
     document.execCommand('undo', false, null);
     this.editor.nativeElement.focus();
   }
-  
+
   redo() {
     document.execCommand('redo', false, null);
     this.editor.nativeElement.focus();
@@ -103,22 +103,21 @@ export class TextEditorComponent implements OnInit {
     document.execCommand('insertText', false, upperCaseText);
   }
 
-  
-changeFontSize() {
-  this.formatText('fontSize', this.selectedFontSize);
-  this.restoreSelection();
-}
 
-constructor(private sanitizer: DomSanitizer) { }
+  changeFontSize() {
+    this.formatText('fontSize', this.selectedFontSize);
+    this.restoreSelection();
+  }
+
+  constructor(private sanitizer: DomSanitizer) { }
 
 
-applyCustomAction(customAction) {
-  customAction.action();
-}
+  applyCustomAction(customAction) {
+    customAction.action();
+  }
 
-ngOnInit(): void {
-console.log(this.inputText);
-this.starterText = this.inputText;
-}
-
+  ngOnInit(): void {
+    console.log(this.inputText);
+    this.starterText = this.inputText;
+  }
 }
