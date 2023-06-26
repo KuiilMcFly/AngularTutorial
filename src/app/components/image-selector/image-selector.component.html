@@ -22,6 +22,20 @@
     </div>
   </div>
 </div>
-<button class="btn-griglia" (click)="gridImages()"><mat-icon>grid_on</mat-icon></button>
+<button mat-icon-button [matMenuTriggerFor]="dropdownMenu" class="dropdown-button">
+  <mat-icon>grid_on</mat-icon>
+</button>
+<mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
+  <button mat-menu-item class="dropdown-item" (click)="setGridSize(1)">
+    1
+  </button>
+  <button mat-menu-item class="dropdown-item" (click)="setGridSize(2)">
+    2
+  </button>
+  <button mat-menu-item class="dropdown-item" (click)="setGridSize(4)">
+    4
+  </button>
+</mat-menu>
+
 <button class="btn-zoom" (click)="zoomIn()">+</button>
 <button class="btn-zoom1" (click)="zoomOut()">-</button>

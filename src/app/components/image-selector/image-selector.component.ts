@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageSelectorComponent implements OnInit {
 starImage = 1
+gridImagesEnabled = false;
+gridSize = 1;
   Image = [
     {
      src: 'https://picsum.photos/550/400/?random',
@@ -60,7 +62,6 @@ starImage = 1
      },
   ]
   selectedImages: any[] = [];
-  gridImagesEnabled: boolean = false;
 
   toggleImageSelection(image: any) {
     if (!this.gridImagesEnabled) {
@@ -69,15 +70,54 @@ starImage = 1
       });
       this.selectedImages = [image];
     } else {
-      image.selected = !image.selected;
-      if (image.selected) {
-        this.selectedImages.push(image);
-      } else {
-        const index = this.selectedImages.indexOf(image);
-        if (index !== -1) {
-          this.selectedImages.splice(index, 1);
+      if (this.selectedImages.length < this.gridSize) {
+        image.selected = !image.selected;
+        if (image.selected) {
+          this.selectedImages.push(image);
+        } else {
+          const index = this.selectedImages.indexOf(image);
+          if (index !== -1) {
+            this.selectedImages.splice(index, 1);
+          }
         }
+      } else {
+        image.selected = !image.selected;
+        if (image.selected) {
+          this.selectedImages.push(image);
+        } else {
+          const index = this.selectedImages.indexOf(image);
+          if (index !== -1) {
+            this.selectedImages.splice(index, 1);
+          }
+        }
+        this.selectedImages = this.selectedImages.slice(0, this.gridSize);
       }
+    }
+  }
+
+  isSelected(image: any): boolean {
+    return this.selectedImages.includes(image);
+  }
+
+  setGridSize(option: number) {
+    this.gridImagesEnabled = true;
+
+    if (option === 1) {
+      this.gridSize = 1;
+      this.selectedImages = [];
+    } else if (option === 2) {
+      this.gridSize = 2;
+      if (this.selectedImages.length > 2) {
+        this.selectedImages = this.selectedImages.slice(0, 2);
+      }
+    } else if (option === 4) {
+      this.gridSize = 4;
+      if (this.selectedImages.length > 4) {
+        this.selectedImages = this.selectedImages.slice(0, 4);
+      }
+    } else {
+      this.gridSize = 0;
+      this.selectedImages = [];
     }
   }
 
@@ -93,10 +133,6 @@ starImage = 1
     if (!this.gridImagesEnabled && this.zoomLevel > 0.1) {
       this.zoomLevel -= 0.1;
     }
-  }
-
-  isSelected(image: any): boolean {
-    return this.selectedImages.includes(image);
   }
 
   gridImages() {

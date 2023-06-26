@@ -96,14 +96,6 @@ h2 {
   margin: 5px 0;
 }
 
-.btn-griglia {
-  position: fixed;
-  top: 5%;
-  left: 95%;
-  width: 3%;
-  height: 6%;
-}
-
 .btn-zoom {
   margin: 5px;
   padding: 5px 10px;
@@ -120,4 +112,39 @@ h2 {
   top: 5%;
   left: 90%;
   width: 2%;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 5%;
+  left: 95%;
+  width: 3%;
+  height: 6%;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+}
+
+.dropdown-item {
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item mat-icon {
+  margin-right: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.selectable:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }

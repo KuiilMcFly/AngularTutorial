@@ -27,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { ImageSelectorComponent } from './components/image-selector/image-selector.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { ImageSelectorComponent } from './components/image-selector/image-select
     MatDialogModule,
     MatFormFieldModule,
     CommonModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
