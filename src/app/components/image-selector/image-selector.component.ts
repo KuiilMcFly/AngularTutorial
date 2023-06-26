@@ -53,13 +53,20 @@ starImage = 1
   gridImagesEnabled: boolean = false;
 
   toggleImageSelection(image: any) {
-    image.selected = !image.selected;
-    if (image.selected) {
-      this.selectedImages.push(image);
+    if (!this.gridImagesEnabled) {
+      this.Image.forEach((img) => {
+        img.selected = (img === image);
+      });
+      this.selectedImages = [image];
     } else {
-      const index = this.selectedImages.indexOf(image);
-      if (index !== -1) {
-        this.selectedImages.splice(index, 1);
+      image.selected = !image.selected;
+      if (image.selected) {
+        this.selectedImages.push(image);
+      } else {
+        const index = this.selectedImages.indexOf(image);
+        if (index !== -1) {
+          this.selectedImages.splice(index, 1);
+        }
       }
     }
   }
@@ -72,7 +79,7 @@ starImage = 1
     this.gridImagesEnabled = !this.gridImagesEnabled;
   }
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
