@@ -18,6 +18,11 @@ export class DogModalComponent implements OnInit {
   @Output() showComponentChange = new EventEmitter<any>();
   @Input() inputText: string;
   editable: boolean;
+
+  isEditButtonVisible: boolean = true;
+
+ 
+  
   
 
 
@@ -26,6 +31,8 @@ export class DogModalComponent implements OnInit {
     console.log('cliccato1');
     this.showComponentChange.emit(this.showSecondModal);
   }
+
+  
 
   showAlert() {
     alert('ciao!');
@@ -62,6 +69,7 @@ export class DogModalComponent implements OnInit {
   }
   toggleEditButtonValue() {
     this.editable = true
+    this.isEditButtonVisible = true;
   }
 
   constructor() {}
