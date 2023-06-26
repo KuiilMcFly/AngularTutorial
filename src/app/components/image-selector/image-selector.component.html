@@ -4,7 +4,6 @@
       <h2>{{ selectedImages.length }} Immagini Selezionate</h2>
       <div class="image-grid">
         <div *ngFor="let img of selectedImages" class="grid-item">
-
           <img [src]="img.src" [alt]="img.title" [style.transform]="'scale(' + zoomLevel + ')'">
           <h3>{{ img.title }}</h3>
         </div>
@@ -26,16 +25,12 @@
   <mat-icon>grid_on</mat-icon>
 </button>
 <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
-  <button mat-menu-item class="dropdown-item" (click)="setGridSize(1)">
-    1
-  </button>
-  <button mat-menu-item class="dropdown-item" (click)="setGridSize(2)">
-    2
-  </button>
-  <button mat-menu-item class="dropdown-item" (click)="setGridSize(4)">
-    4
-  </button>
+  <button mat-menu-item class="dropdown-item" (click)="setGridSize(1)">1</button>
+  <button mat-menu-item class="dropdown-item" (click)="setGridSize(2)">2</button>
+  <button mat-menu-item class="dropdown-item" (click)="setGridSize(4)">4</button>
 </mat-menu>
 
 <button class="btn-zoom" (click)="zoomIn()">+</button>
 <button class="btn-zoom1" (click)="zoomOut()">-</button>
+<button class="btn-back" (click)="refreshPage()">Ritorna Indietro</button>
+

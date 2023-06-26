@@ -80,7 +80,6 @@ h2 {
   align-items: center;
   width: 700px;
   height: 500px;
-
 }
 
 .grid-layout .grid-item {
@@ -119,14 +118,20 @@ h2 {
   width: 2%;
 }
 
+.btn-back {
+  padding: 10px 20px;
+  position: fixed;
+  top: 93%;
+  left: 90%;
+  cursor: pointer;
+}
+
 .dropdown-button {
   display: flex;
   align-items: center;
   position: fixed;
   top: 5%;
   left: 95%;
-  width: 3%;
-  height: 6%;
 }
 
 .dropdown-menu {
@@ -152,4 +157,12 @@ h2 {
 
 .selectable:hover {
   background-color: rgba(0, 0, 0, 0.04);
+}
+
+.mat-icon-button {
+  padding: 0;
+  min-width: 0;
+  width: 28px;
+  height: 40px;
+  line-height: 40px;
 }
