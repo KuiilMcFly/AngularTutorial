@@ -6,6 +6,10 @@
 <div class="editor-container" *ngIf="editable">
   
     <div class="toolbar">
+      <button class="custom-actionstyle" *ngIf="actionLabel != '' " (click)="onActionClick()">
+        <p>{{actionLabel}}</p>
+        <mat-icon>{{actionIcon}}</mat-icon>
+      </button>
       <button mat-icon-button (click)="undo()" title="Annulla">
         <mat-icon>undo</mat-icon>
       </button>

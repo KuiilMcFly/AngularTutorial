@@ -19,6 +19,13 @@ export class TextEditorComponent implements OnInit {
   @Output() saveChanges = new EventEmitter<string>();
   isModified: boolean = false;
   previousText: string;
+  @Input() actionLabel: string = '';
+  @Output() actionOutput = new EventEmitter<any>();
+  @Input() actionIcon: string = 'arrow_drop_down';
+
+  onActionClick() {
+    this.actionOutput.emit()
+  }
 
   onInput(event: Event) {
     this.modifiedText = (event.target as HTMLElement).innerHTML;

@@ -22,6 +22,12 @@
 .editor-container p {
   text-align: center;
 }
+.editor-container .custom-actionstyle {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: white;
+}
 .editor-container .buttonContainer {
   display: flex;
   margin: 15px 0;

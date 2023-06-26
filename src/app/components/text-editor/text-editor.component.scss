@@ -25,12 +25,20 @@
     p {
       text-align: center;
     }
+    .custom-actionstyle {
+      display: flex;
+  align-items: center;
+  border: none;
+  background-color: white;
+    }
 
 
     .buttonContainer {
       display: flex;
      
       margin: 15px 0;
+
+     
      
       .EditorButton {
         padding: 10px;
