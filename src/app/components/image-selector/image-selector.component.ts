@@ -9,52 +9,52 @@ export class ImageSelectorComponent implements OnInit {
 starImage = 1
   Image = [
     {
-     src: 'https://picsum.photos/500/900/?random',
+     src: 'https://picsum.photos/550/400/?random',
      title: 'Image 1',
      selected: false
     },
     {
-     src: 'https://picsum.photos/450/250/?random',
+     src: 'https://picsum.photos/550/401/?random',
      title: 'Image 2',
      selected: false
     },
     {
-     src: 'https://picsum.photos/5000/5000/?random',
+     src: 'https://picsum.photos/550/402/?random',
      title: 'Image 3',
      selected: false
     },
     {
-      src: 'https://picsum.photos/750/450/?random',
+      src: 'https://picsum.photos/550/403/?random',
       title: 'Image 4',
       selected: false
      },
      {
-      src: 'https://picsum.photos/1500/1000/?random',
+      src: 'https://picsum.photos/550/404/?random',
       title: 'Image 5',
       selected: false
      },
      {
-      src: 'https://picsum.photos/400/500/?random',
+      src: 'https://picsum.photos/550/405/?random',
       title: 'Image 6',
       selected: false
      },
      {
-      src: 'https://picsum.photos/600/850/?random',
+      src: 'https://picsum.photos/550/406/?random',
       title: 'Image 7',
       selected: false
      },
      {
-      src: 'https://picsum.photos/2000/2000/?random',
+      src: 'https://picsum.photos/550/407/?random',
       title: 'Image 8',
       selected: false
      },
      {
-      src: 'https://picsum.photos/3500/5000/?random',
+      src: 'https://picsum.photos/550/408/?random',
       title: 'Image 9',
       selected: false
      },
      {
-      src: 'https://picsum.photos/550/100/?random',
+      src: 'https://picsum.photos/550/409/?random',
       title: 'Image 10',
       selected: false
      },
