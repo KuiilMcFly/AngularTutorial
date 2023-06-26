@@ -81,6 +81,18 @@ starImage = 1
     }
   }
 
+  zoomLevel: number = 1;
+
+  zoomIn() {
+    this.zoomLevel += 0.1;
+  }
+
+  zoomOut() {
+    if (this.zoomLevel > 0.1) {
+      this.zoomLevel -= 0.1;
+    }
+  }
+  
   isSelected(image: any): boolean {
     return this.selectedImages.includes(image);
   }

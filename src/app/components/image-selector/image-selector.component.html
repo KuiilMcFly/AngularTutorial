@@ -5,7 +5,7 @@
       <div class="image-grid">
         <div *ngFor="let img of selectedImages" class="grid-item">
 
-          <img [src]="img.src" [alt]="img.title">
+          <img [src]="img.src" [alt]="img.title" [style.transform]="'scale(' + zoomLevel + ')'">
           <h3>{{ img.title }}</h3>
         </div>
       </div>
@@ -23,3 +23,5 @@
   </div>
 </div>
 <button class="btn-griglia" (click)="gridImages()">Griglia Immagini</button>
+<button class="btn-zoom" (click)="zoomIn()">+</button>
+<button class="btn-zoom1" (click)="zoomOut()">-</button>
