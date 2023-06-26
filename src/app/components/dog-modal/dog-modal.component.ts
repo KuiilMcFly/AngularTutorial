@@ -27,6 +27,10 @@ export class DogModalComponent implements OnInit {
     this.showComponentChange.emit(this.showSecondModal);
   }
 
+  showAlert() {
+    alert('ciao!');
+  }
+
   log() {
    
     console.log(this.dog, 'dog');

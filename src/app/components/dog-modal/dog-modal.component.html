@@ -7,7 +7,7 @@
                 <app-text-editor [inputText]="dog.story" [editable]="editable" (saveChanges)="onSavedText($event)"></app-text-editor>
             </div>
             <button class="editButton" (click)="toggleEditButtonValue()">Matita</button>
-
+            <button (click)="showAlert()">alert</button>
             <!--
                 <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>
             -->  

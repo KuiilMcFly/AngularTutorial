@@ -18,23 +18,25 @@ export class TextEditorComponent implements OnInit {
   @Input() modifiedText: string;
   @Output() saveChanges = new EventEmitter<string>();
   starterText: string = "";
-
+  isModified: boolean = false;
+  previousText: string;
 
   onInput(event: Event) {
     this.modifiedText = (event.target as HTMLElement).innerHTML;
+    this.previousText = this.inputText;
   }
 
   savedText() {
     const editorContent = this.editor.nativeElement.innerHTML;
     this.saveChanges.emit(editorContent);
     this.editable = false;
+    this.isModified = false; 
   }
 
   cancelChanges() {
-    // this.editor.nativeElement.innerHTML = this.inputText;
-    this.saveChanges.emit(this.starterText);
+    this.editor.nativeElement.innerHTML = this.previousText;
+    this.saveChanges.emit(this.previousText);
     this.editable = false;
-    // this.ngOnChanges(null);
   }
 
 
@@ -117,7 +119,6 @@ export class TextEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.inputText);
-    this.starterText = this.inputText;
+    this.previousText = this.inputText;
   }
 }
