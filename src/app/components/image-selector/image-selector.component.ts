@@ -139,8 +139,9 @@ export class ImageSelectorComponent implements OnInit {
     this.gridImagesEnabled = !this.gridImagesEnabled;
   }
 
-  refreshPage() {
-    window.location.reload();
+  showSingleImage() {
+    this.gridImagesEnabled = false;
+    this.selectedImages = this.selectedImages.slice(0, 1);
   }
 
   constructor() {}
