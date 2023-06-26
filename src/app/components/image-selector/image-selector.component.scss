@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 .selected-image {
@@ -77,6 +78,9 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 700px;
+  height: 500px;
+
 }
 
 .grid-layout .grid-item {
@@ -85,6 +89,7 @@ h2 {
   align-items: center;
   margin: 10px;
   text-align: center;
+  border: 20px solid burlywood;
 }
 
 .grid-layout .grid-item img {
