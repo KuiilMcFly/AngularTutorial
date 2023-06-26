@@ -24,6 +24,7 @@ export class TextEditorComponent implements OnInit {
   @Input() actionIcon: string = 'arrow_drop_down';
   @Input() isEditButtonVisible: boolean;
   @Output() cancelChangesOutput = new EventEmitter<void>();
+  @Output() editButtonClicked = new EventEmitter<void>();
 
   onActionClick() {
     this.actionOutput.emit()
@@ -46,7 +47,7 @@ export class TextEditorComponent implements OnInit {
     this.saveChanges.emit(this.previousText);
     this.editable = false;
     this.isEditButtonVisible = true;
-    this.cancelChangesOutput.emit();
+  this.editButtonClicked.emit();
   }
 
 

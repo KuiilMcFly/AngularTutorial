@@ -19,7 +19,7 @@ export class DogModalComponent implements OnInit {
   @Input() inputText: string;
   editable: boolean;
 
-  isEditButtonVisible: boolean = true;
+ isEditButtonVisible: boolean = true;
 
  
   
@@ -69,7 +69,7 @@ export class DogModalComponent implements OnInit {
   }
   toggleEditButtonValue() {
     this.editable = true
-    this.isEditButtonVisible = true;
+    this.isEditButtonVisible = !this.isEditButtonVisible;
   }
 
   constructor() {}
