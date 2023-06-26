@@ -11,6 +11,7 @@
     </div>
   </div>
 </div>
+
 <div class="sidebar">
   <h2>Immagini</h2>
   <div class="thumbnails">
@@ -21,9 +22,11 @@
     </div>
   </div>
 </div>
+
 <button mat-icon-button [matMenuTriggerFor]="dropdownMenu" class="dropdown-button">
   <mat-icon>grid_on</mat-icon>
 </button>
+
 <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
   <button mat-menu-item class="dropdown-item" (click)="setGridSize(1)">1</button>
   <button mat-menu-item class="dropdown-item" (click)="setGridSize(2)">2</button>
