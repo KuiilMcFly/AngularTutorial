@@ -17,7 +17,6 @@ export class TextEditorComponent implements OnInit {
   savedSelection: Range;
   @Input() modifiedText: string;
   @Output() saveChanges = new EventEmitter<string>();
-  starterText: string = "";
   isModified: boolean = false;
   previousText: string;
 

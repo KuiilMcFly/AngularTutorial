@@ -17,6 +17,8 @@
   height: 70%;
   background-color: white;
   border-radius: 15px;
+  overflow: auto;
+  max-height: 70%;
 }
 .modal .modal-box .box-content {
   padding: 5%;
