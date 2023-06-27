@@ -10,12 +10,17 @@
 .container {
   display: flex;
 }
+.back-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
 
 .buttons-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-
+  padding-right: 5px;
 }
 
 .selected-image {
