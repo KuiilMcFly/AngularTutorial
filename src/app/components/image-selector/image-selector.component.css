@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  width: 100%;
+  position: relative;
+  left: 10%;
 }
 
 .selected-image {
@@ -77,6 +80,8 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 700px;
+  height: 500px;
 }
 
 .grid-layout .grid-item {
@@ -85,6 +90,7 @@ h2 {
   align-items: center;
   margin: 10px;
   text-align: center;
+  border: 5px solid burlywood;
 }
 
 .grid-layout .grid-item img {
@@ -96,8 +102,63 @@ h2 {
   margin: 5px 0;
 }
 
-.btn-griglia {
+.btn-zoom {
+  margin: 5px;
+  padding: 5px 10px;
+  position: fixed;
+  top: 5%;
+  width: 2%;
+  left: 92%;
+}
+
+.btn-zoom1 {
+  margin: 5px;
+  padding: 5px 10px;
+  position: fixed;
+  top: 5%;
+  left: 90%;
+  width: 2%;
+}
+
+.btn-back {
+  padding: 8px 8px;
+  position: fixed;
+  top: 93%;
+  left: 90%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 5%;
   left: 95%;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+}
+
+.dropdown-item {
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item mat-icon {
+  margin-right: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.selectable:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }/*# sourceMappingURL=image-selector.component.css.map */

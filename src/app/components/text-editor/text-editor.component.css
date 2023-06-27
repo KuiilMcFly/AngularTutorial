@@ -34,14 +34,10 @@
 }
 .editor-container .buttonContainer .EditorButton {
   padding: 10px;
-  border-radius: 15px;
+  border: none;
   margin: 0 auto;
   width: 100px;
-  color: white;
-}
-.editor-container .buttonContainer #saveButton {
-  background-color: rgb(52, 52, 160);
-}
-.editor-container .buttonContainer #undoButton {
-  background-color: rgb(182, 45, 45);
+  color: orange;
+  font-weight: bolder;
+  background-color: white;
 }/*# sourceMappingURL=text-editor.component.css.map */

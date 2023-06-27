@@ -7,7 +7,7 @@
                 <app-text-editor [actionLabel]="'Inserisci'" (actionOutput)="showAlert()" [inputText]="dog.story" [editable]="editable" (saveChanges)="onSavedText($event)"></app-text-editor>
             </div>
             
-            <button mat-raised-button class="editButton" (click)="toggleEditButtonValue()"><mat-icon>edit</mat-icon></button>
+            <button mat-raised-button class="editButton" (click)="toggleEditButtonValue()" *ngIf="isEditButtonVisible"><mat-icon>edit</mat-icon></button>
             
             <!--
                 <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>

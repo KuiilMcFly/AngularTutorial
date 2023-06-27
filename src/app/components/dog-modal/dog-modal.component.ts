@@ -18,6 +18,7 @@ export class DogModalComponent implements OnInit {
   @Output() showComponentChange = new EventEmitter<any>();
   @Input() inputText: string;
   editable: boolean;
+  
 
  isEditButtonVisible: boolean = true;
 
@@ -49,6 +50,7 @@ export class DogModalComponent implements OnInit {
     this.inputText = modifiedText;
     this.dog.story = modifiedText; // Aggiorna il testo nel modello 'dog.story'
     this.editable = false;
+    this.isEditButtonVisible = true;
   }
 
   saveChanges() {
@@ -69,7 +71,8 @@ export class DogModalComponent implements OnInit {
   }
   toggleEditButtonValue() {
     this.editable = true
-    this.isEditButtonVisible = !this.isEditButtonVisible;
+    this.isEditButtonVisible = false;
+    
   }
 
   constructor() {}
