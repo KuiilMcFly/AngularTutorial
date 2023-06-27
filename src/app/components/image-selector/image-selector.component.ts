@@ -62,6 +62,7 @@ export class ImageSelectorComponent implements OnInit {
     },
   ];
   selectedImages: any[] = [];
+  fullscreenEnabled: any;
   enlargeImage() {
     if (this.selectedImages.length > 0) {
       this.enlargedImageVisible = true;
