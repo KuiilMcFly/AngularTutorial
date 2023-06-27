@@ -62,7 +62,14 @@ export class ImageSelectorComponent implements OnInit {
     },
   ];
   selectedImages: any[] = [];
-  fullscreenEnabled: any;
+  enlargedImageVisible = false;
+  zoomLevel = 1;
+  fullscreenEnabled: boolean;
+
+  constructor() {}
+
+  ngOnInit() {}
+
   enlargeImage() {
     if (this.selectedImages.length > 0) {
       this.enlargedImageVisible = true;
@@ -131,10 +138,6 @@ export class ImageSelectorComponent implements OnInit {
     }
   }
 
-  zoomLevel: number = 1;
-
-  enlargedImageVisible = false;
-
  zoomIn() {
   if (!this.gridImagesEnabled) {
     if (this.fullscreenEnabled) {
@@ -145,7 +148,6 @@ export class ImageSelectorComponent implements OnInit {
   }
 }
 
-
 zoomOut() {
   if (!this.gridImagesEnabled && this.zoomLevel > 0.1) {
     if (this.fullscreenEnabled) {
@@ -154,7 +156,9 @@ zoomOut() {
       this.zoomLevel -= 0.1;
     }
   }
+
 }
+
   gridImages() {
     this.gridImagesEnabled = !this.gridImagesEnabled;
   }
@@ -163,8 +167,4 @@ zoomOut() {
     this.gridImagesEnabled = false;
     this.selectedImages = this.selectedImages.slice(0, 1);
   }
-
-  constructor() {}
-
-  ngOnInit() {}
 }

@@ -11,16 +11,12 @@
   <button class="btn-zoom2" (click)="enlargeImage()">
     <mat-icon>fullscreen</mat-icon>
   </button>
-  <!--<button class="btn-zoom" (click)="zoomIn()">+</button>
-  <button class="btn-zoom1" (click)="zoomOut()">-</button>-->
 </div>
-
 
 <div class="back-button">
   <button class="btn-back" (click)="showSingleImage()">
     <mat-icon>keyboard_arrow_left</mat-icon>Torna Indietro
   </button>
-
 </div>
 
 <div class="container">
@@ -48,7 +44,11 @@
       </div>
     </div>
   </div>
+</div>
 
-
-
+<div *ngIf="enlargedImageVisible" class="enlarged-image-overlay">
+  <div class="enlarged-image-container">
+    <img [src]="selectedImages[0].src" [alt]="selectedImages[0].title" [style.transform]="'scale(' + zoomLevel + ')'">
+    <button class="btn-close" (click)="closeEnlargedImage()">Chiudi</button>
+  </div>
 </div>
