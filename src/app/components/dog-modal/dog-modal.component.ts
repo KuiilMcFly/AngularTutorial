@@ -22,10 +22,6 @@ export class DogModalComponent implements OnInit {
 
  isEditButtonVisible: boolean = true;
 
- 
-  
-  
-
 
   openSecondModal() {
     this.showSecondModal = true;
@@ -64,6 +60,7 @@ export class DogModalComponent implements OnInit {
   hideComponente(value: any) {
     this.showComponent = value;
     this.showComponentChange.emit(value);
+    this.isEditButtonVisible = false;
   }
 
   OnClick() {
