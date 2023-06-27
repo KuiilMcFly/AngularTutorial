@@ -37,7 +37,7 @@
   border: none;
   margin: 0 auto;
   width: 100px;
-  color: orange;
+  color: rgb(255, 0, 0);
   font-weight: bolder;
   background-color: white;
 }/*# sourceMappingURL=text-editor.component.css.map */
