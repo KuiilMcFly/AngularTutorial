@@ -62,6 +62,15 @@ export class ImageSelectorComponent implements OnInit {
     },
   ];
   selectedImages: any[] = [];
+  enlargeImage() {
+    if (this.selectedImages.length > 0) {
+      this.enlargedImageVisible = true;
+    }
+  }
+  closeEnlargedImage() {
+    this.enlargedImageVisible = false;
+    this.zoomLevel = 1;
+  }
 
   toggleImageSelection(image: any) {
     if (!this.gridImagesEnabled) {
@@ -123,18 +132,28 @@ export class ImageSelectorComponent implements OnInit {
 
   zoomLevel: number = 1;
 
-  zoomIn() {
-    if (!this.gridImagesEnabled) {
+  enlargedImageVisible = false;
+
+ zoomIn() {
+  if (!this.gridImagesEnabled) {
+    if (this.fullscreenEnabled) {
+      this.zoomLevel += 0.1;
+    } else if (this.selectedImages.length > 0) {
       this.zoomLevel += 0.1;
     }
   }
+}
 
-  zoomOut() {
-    if (!this.gridImagesEnabled && this.zoomLevel > 0.1) {
+
+zoomOut() {
+  if (!this.gridImagesEnabled && this.zoomLevel > 0.1) {
+    if (this.fullscreenEnabled) {
+      this.zoomLevel -= 0.1;
+    } else if (this.selectedImages.length > 0) {
       this.zoomLevel -= 0.1;
     }
   }
-
+}
   gridImages() {
     this.gridImagesEnabled = !this.gridImagesEnabled;
   }
