@@ -4,19 +4,28 @@
             <h2>Descrizione della razza {{dog.title}} </h2>
             <div class="flex-container">
                 <img src={{dog.immagine}} alt="">
-                <app-text-editor [actionLabel]="'Inserisci'" (actionOutput)="showAlert()" [inputText]="dog.story" [editable]="editable" (saveChanges)="onSavedText($event)"></app-text-editor>
+                <app-text-editor 
+                [actionLabel]="'Inserisci'" 
+                (actionOutput)="showAlert()" 
+                [inputText]="dog.story" 
+                [editable]="editable" 
+                (saveChanges)="onSavedText($event)"
+                ></app-text-editor>
             </div>
             
-            <button mat-raised-button class="editButton" (click)="toggleEditButtonValue()" *ngIf="isEditButtonVisible"><mat-icon>edit</mat-icon></button>
+            <button mat-raised-button class="editButton" 
+            (click)="toggleEditButtonValue()" 
+            *ngIf="isEditButtonVisible"><mat-icon>edit</mat-icon></button>
             
-            <!--
-                <button class="btn-closeModal" *ngIf="showComponent" (click)="openSecondModal()">Modifica</button>
-            -->  
-           
+         
             
             <br>
-            <button class="btn-closeModal" (click)="hideComponente(false)" *ngIf="isEditButtonVisible">Chiudi modale</button>
-            <app-pagina-modale [(showComponent)]="showSecondModal" *ngIf="showSecondModal"></app-pagina-modale>
+            <button class="btn-closeModal" 
+            (click)="hideComponente(false)" 
+            *ngIf="isEditButtonVisible">Chiudi modale</button>
+            <app-pagina-modale 
+            [(showComponent)]="showSecondModal" 
+            *ngIf="showSecondModal"></app-pagina-modale>
         </div>
     </div>
   </div>
