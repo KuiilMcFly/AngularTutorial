@@ -22,8 +22,8 @@
 <div class="container">
   <div class="sidebar">
     <h2>Immagini</h2>
-    <div class="thumbnails">
-      <div class="thumbnail" *ngFor="let img of Image; let i = index" [class.active]="isSelected(img)"
+    <div class="div1">
+      <div class="div2" *ngFor="let img of Image; let i = index" [class.active]="isSelected(img)"
         (click)="toggleImageSelection(img)">
         <img [src]="img.src" [alt]="img.title">
         <h3>{{ img.title }}</h3>
