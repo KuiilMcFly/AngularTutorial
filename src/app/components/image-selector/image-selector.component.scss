@@ -4,7 +4,6 @@
   align-items: center;
   height: 100%;
   width: 100%;
-
 }
 
 .container {
@@ -37,8 +36,7 @@
   background-color: #f5f5f5;
   padding: 20px;
   box-sizing: border-box;
-
-  height: 55%;
+  height: 598px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -51,26 +49,28 @@ h2 {
 .div1 {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  overflow-y: auto;
-  max-height: 250px;
+  flex-grow: 0;
+  max-height: 440px;
 }
 
 .div2 {
-  display: flex;
-  align-items: center;
   margin-bottom: 10px;
   cursor: pointer;
 }
 
 .div2 img {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 80%;
   margin-right: 10px;
 }
 
 .div2 h3 {
   margin: 0;
+  font-size: 15px;
+  color: white;
+  background: forestgreen;
+  width: 100%;
+  text-align: center;
 }
 
 #image-viewer-container {
@@ -120,7 +120,6 @@ h2 {
   padding: 5px 10px;
 
   width: 2%;
-
 }
 
 .btn-zoom1 {
@@ -198,7 +197,7 @@ h2 {
   max-height: 100%;
 }
 
-.btn-close{
+.btn-close {
   position: absolute;
   bottom: 126%;
   left: 172%;
@@ -215,3 +214,11 @@ h2 {
   background-color: #eaeaea;
 }
 
+.principale {
+  width: 80%;
+  height: 90%;
+  background-color: white;
+  position: relative;
+  left: 10%;
+  top: 5%;
+}
