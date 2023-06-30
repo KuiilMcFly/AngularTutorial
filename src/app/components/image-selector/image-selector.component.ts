@@ -6,7 +6,6 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./image-selector.component.scss"],
 })
 export class ImageSelectorComponent implements OnInit {
-  
   starImage = 1;
   gridImagesEnabled = false;
   gridSize = 1;
@@ -62,6 +61,7 @@ export class ImageSelectorComponent implements OnInit {
       selected: false,
     },
   ];
+
   selectedImages: any[] = [];
   enlargedImageVisible = false;
   zoomLevel = 1;
@@ -69,7 +69,22 @@ export class ImageSelectorComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.setDefaultImage();
+  }
+
+  setDefaultImage() {
+    const defaultImage = {
+      src: "/assets/Dogs/default-grigia.png",
+      selected: true,
+    };
+
+    if (!this.gridImagesEnabled) {
+      this.selectedImages = [defaultImage];
+    } else {
+      this.selectedImages = [];
+    }
+  }
 
   enlargeImage() {
     if (this.selectedImages.length > 0) {
