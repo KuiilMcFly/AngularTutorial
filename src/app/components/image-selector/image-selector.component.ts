@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./image-selector.component.scss"],
 })
 export class ImageSelectorComponent implements OnInit {
+  
   starImage = 1;
   gridImagesEnabled = false;
   gridSize = 1;
@@ -135,24 +136,6 @@ export class ImageSelectorComponent implements OnInit {
     } else {
       this.gridSize = 0;
       this.selectedImages = [];
-    }
-  }
-  zoomIn() {
-    if (!this.gridImagesEnabled) {
-      if (this.fullscreenEnabled) {
-        this.zoomLevel += 0.1;
-      } else if (this.selectedImages.length > 0) {
-        this.zoomLevel += 0.1;
-      }
-    }
-  }
-  zoomOut() {
-    if (!this.gridImagesEnabled && this.zoomLevel > 0.1) {
-      if (this.fullscreenEnabled) {
-        this.zoomLevel -= 0.1;
-      } else if (this.selectedImages.length > 0) {
-        this.zoomLevel -= 0.1;
-      }
     }
   }
   gridImages() {
