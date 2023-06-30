@@ -36,7 +36,7 @@
   background-color: #f5f5f5;
   padding: 20px;
   box-sizing: border-box;
-  height: 598px;
+  height: 714px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -85,7 +85,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 50%;
+  width: 100%;
 }
 
 .grid-layout .image-grid {
@@ -107,8 +107,8 @@ h2 {
 }
 
 .grid-layout .grid-item img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 500px;
+  max-height: 300px;
 }
 
 .grid-layout .grid-item h3 {
@@ -118,7 +118,6 @@ h2 {
 .btn-zoom {
   margin: 5px;
   padding: 5px 10px;
-
   width: 2%;
 }
 
@@ -216,11 +215,11 @@ h2 {
 
 .principale {
   width: 80%;
-  height: 90%;
+  height: 120%;
   background-color: white;
   position: relative;
   left: 10%;
-  top: 5%;
+  top: 2%;
 }
 
 .image1 {
