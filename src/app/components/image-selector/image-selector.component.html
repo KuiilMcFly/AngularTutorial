@@ -35,13 +35,12 @@
           <div class="image-grid" *ngIf="gridSize === 4">
             <div *ngFor="let img of selectedImages" class="grid-item">
               <img [src]="img.src" [alt]="img.title" [style.transform]="'scale(' + zoomLevel + ')'">
-              <h3>{{ img.title }}</h3>
             </div>
           </div>
           <div class="image-grid" *ngIf="gridSize !== 4">
             <div *ngFor="let img of selectedImages" class="grid-item">
               <img [src]="img.src" [alt]="img.title" [style.transform]="'scale(' + zoomLevel + ')'">
-              <h3>{{ img.title }}</h3>
+
             </div>
           </div>
         </div>
