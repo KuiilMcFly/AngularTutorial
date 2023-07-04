@@ -24,15 +24,9 @@
         <mat-icon>grid_on</mat-icon>
       </button>
       <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
-        <button mat-menu-item class="dropdown-item" (click)="setGrid(1)">
-          1
-        </button>
-        <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">
-          2
-        </button>
-        <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">
-          4
-        </button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(1)">1</button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">2</button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">4</button>
       </mat-menu>
     </div>
   </div>

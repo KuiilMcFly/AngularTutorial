@@ -3,7 +3,7 @@
   background-color: #f5f5f5;
   padding: 20px;
   box-sizing: border-box;
-  height: 761px;
+  height: 720px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -109,3 +109,6 @@ img {
   display: flex;
 }
 
+.principale {
+  width: 200vh;
+}
