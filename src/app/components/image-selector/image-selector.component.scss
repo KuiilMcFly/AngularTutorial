@@ -23,12 +23,13 @@ h3 {
   flex: 1;
   padding: 20px;
   border: 1px solid black;
-  background: black;
+  background: grey;
 }
 
 .image-container {
   display: flex;
   flex-wrap: wrap;
+  width: 45%;
 }
 
 img {
@@ -73,9 +74,6 @@ img {
   background-color: #f0f0f0;
   border: none;
   cursor: pointer;
-  position: relative;
-  left: 96%;
-  bottom: 700px;
 }
 
 .dropdown-content {
@@ -105,3 +103,8 @@ img {
 .dropdown-content button:hover {
   background-color: #f0f0f0;
 }
+
+.container {
+  display: flex;
+}
+

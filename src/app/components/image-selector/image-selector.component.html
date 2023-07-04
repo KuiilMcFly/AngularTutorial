@@ -1,28 +1,31 @@
-<div class="container">
-  <div class="sidebar">
-    <div class="image-container">
-      <ng-container *ngFor="let image of images">
-        <h3>{{ image.title }}</h3>
-        <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected">
-      </ng-container>
+<div class="principale">
+  <div class="container">
+    <div class="sidebar">
+      <div class="image-container">
+        <ng-container *ngFor="let image of images">
+          <h3>{{ image.title }}</h3>
+          <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected">
+        </ng-container>
+      </div>
     </div>
-  </div>
-  <div>
-    <button [matMenuTriggerFor]="dropdownMenu" class="dropdown-button">
-      <mat-icon>grid_on</mat-icon>
-    </button>
-    <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
-      <button mat-menu-item class="dropdown-item" (click)="setGrid(1)" [disabled]="gridSize === 1">1</button>
-      <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">2</button>
-      <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">4</button>
-    </mat-menu>
-  </div>
 
-  <div class="content">
-    <div class="image-grid grid-{{ gridColumns }}">
-      <ng-container *ngFor="let image of selectedImages.slice(0, gridColumns)">
-        <img [src]="image.src" [alt]="image.title">
-      </ng-container>
+
+    <div class="content">
+      <div class="image-grid grid-{{ gridColumns }}">
+        <ng-container *ngFor="let image of selectedImages.slice(0, gridColumns)">
+          <img [src]="image.src" [alt]="image.title">
+        </ng-container>
+      </div>
+    </div>
+    <div>
+      <button [matMenuTriggerFor]="dropdownMenu" class="dropdown-button">
+        <mat-icon>grid_on</mat-icon>
+      </button>
+      <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(1)" [disabled]="gridSize === 1">1</button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">2</button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">4</button>
+      </mat-menu>
     </div>
   </div>
 </div>
