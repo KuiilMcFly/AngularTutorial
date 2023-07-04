@@ -1,57 +1,28 @@
-<div class="principale">
-  <div class="buttons-container">
+<div class="container">
+  <div class="sidebar">
+    <div class="image-container">
+      <ng-container *ngFor="let image of images">
+        <h3>{{ image.title }}</h3>
+        <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected">
+      </ng-container>
+    </div>
+  </div>
+  <div>
     <button [matMenuTriggerFor]="dropdownMenu" class="dropdown-button">
       <mat-icon>grid_on</mat-icon>
     </button>
-
     <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
-      <button mat-menu-item class="dropdown-item" (click)="setGridSize(1)" [disabled]="gridSize === 1">1</button>
-      <button mat-menu-item class="dropdown-item" (click)="setGridSize(2)" [disabled]="gridSize === 2">2</button>
-      <button mat-menu-item class="dropdown-item" (click)="setGridSize(4)" [disabled]="gridSize === 4">4</button>
+      <button mat-menu-item class="dropdown-item" (click)="setGrid(1)" [disabled]="gridSize === 1">1</button>
+      <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">2</button>
+      <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">4</button>
     </mat-menu>
-    <button class="btn-zoom2" (click)="enlargeImage()">
-      <mat-icon>fullscreen</mat-icon>
-    </button>
-    <button class="btn-back" (click)="showSingleImage()">
-      <mat-icon>keyboard_arrow_left</mat-icon>Torna Indietro
-    </button>
   </div>
 
-  <div class="container">
-    <div class="sidebar">
-      <div class="div1">
-        <div class="div2" *ngFor="let img of Image; let i = index" [class.active]="isSelected(img)"
-          (click)="toggleImageSelection(img)">
-          <h3>{{ img.title }}</h3>
-          <img [src]="img.src" [alt]="img.title">
-        </div>
-      </div>
-    </div>
-
-
-    <div id="image-viewer-container" [class.grid-layout]="gridImagesEnabled">
-      <div class="image-viewer">
-        <div class="selected-image">
-          <div class="image-grid" *ngIf="gridSize === 4">
-            <div *ngFor="let img of selectedImages" class="grid-item">
-              <img [src]="img.src" [alt]="img.title" [style.transform]="'scale(' + zoomLevel + ')'">
-            </div>
-          </div>
-          <div class="image-grid" *ngIf="gridSize !== 4">
-            <div *ngFor="let img of selectedImages" class="grid-item">
-              <img [src]="img.src" [alt]="img.title" [style.transform]="'scale(' + zoomLevel + ')'">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="enlargedImageVisible" class="enlarged-image-overlay">
-    <div class="enlarged-image-container">
-      <img [src]="selectedImages[0].src" [alt]="selectedImages[0].title" [style.transform]="'scale(' + zoomLevel + ')'">
-      <button class="btn-close" (click)="closeEnlargedImage()">Chiudi</button>
+  <div class="content">
+    <div class="image-grid grid-{{ gridColumns }}">
+      <ng-container *ngFor="let image of selectedImages.slice(0, gridColumns)">
+        <img [src]="image.src" [alt]="image.title">
+      </ng-container>
     </div>
   </div>
 </div>

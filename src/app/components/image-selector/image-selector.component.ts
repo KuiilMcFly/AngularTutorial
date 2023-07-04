@@ -9,7 +9,7 @@ export class ImageSelectorComponent implements OnInit {
   starImage = 1;
   gridImagesEnabled = false;
   gridSize = 1;
-  Image = [
+  images = [
     {
       src: "https://picsum.photos/550/400/?random",
       title: "Image 1",
@@ -62,68 +62,32 @@ export class ImageSelectorComponent implements OnInit {
     },
   ];
 
+  ngOnInit() {}
   selectedImages: any[] = [];
-  enlargedImageVisible = false;
-  zoomLevel = 1;
-  fullscreenEnabled: boolean;
+  gridColumns = 1;
 
-  constructor() {}
-
-  ngOnInit() {
-    this.setDefaultImage();
-  }
-
-  setDefaultImage() {
-    const defaultImage = {
-      src: "/assets/Dogs/default-grigia.png",
-      selected: true,
-    };
-
-    if (!this.gridImagesEnabled) {
-      this.selectedImages = [defaultImage];
-    } else {
+  selectImage(image: any): void {
+    if (
+      this.gridColumns === 4 &&
+      this.selectedImages.length >= 4 &&
+      !image.selected
+    ) {
+      return;
+    }
+    if (this.gridColumns === 1) {
       this.selectedImages = [];
     }
-  }
-
-  enlargeImage() {
-    if (this.selectedImages.length > 0) {
-      this.enlargedImageVisible = true;
+    if (this.gridColumns === 2) {
+      this.selectedImages = this.selectedImages.slice(-1);
     }
-  }
-  closeEnlargedImage() {
-    this.enlargedImageVisible = false;
-    this.zoomLevel = 1;
-  }
 
-  toggleImageSelection(image: any) {
-    if (!this.gridImagesEnabled) {
-      this.Image.forEach((img) => {
-        img.selected = img === image;
-      });
-      this.selectedImages = [image];
+    image.selected = !image.selected;
+    if (image.selected) {
+      this.selectedImages.push(image);
     } else {
-      if (this.selectedImages.length < this.gridSize) {
-        image.selected = !image.selected;
-        if (image.selected) {
-          this.selectedImages.push(image);
-        } else {
-          const index = this.selectedImages.indexOf(image);
-          if (index !== -1) {
-            this.selectedImages.splice(index, 1);
-          }
-        }
-      } else {
-        image.selected = !image.selected;
-        if (image.selected) {
-          this.selectedImages.push(image);
-        } else {
-          const index = this.selectedImages.indexOf(image);
-          if (index !== -1) {
-            this.selectedImages.splice(index, 1);
-          }
-        }
-        this.selectedImages = this.selectedImages.slice(0, this.gridSize);
+      const index = this.selectedImages.indexOf(image);
+      if (index !== -1) {
+        this.selectedImages.splice(index, 1);
       }
     }
   }
@@ -132,33 +96,8 @@ export class ImageSelectorComponent implements OnInit {
     return this.selectedImages.includes(image);
   }
 
-  setGridSize(option: number) {
-    this.gridImagesEnabled = true;
-
-    if (option === 1) {
-      this.gridSize = 1;
-      this.selectedImages = [];
-    } else if (option === 2) {
-      this.gridSize = 2;
-      if (this.selectedImages.length > 2) {
-        this.selectedImages = this.selectedImages.slice(0, 2);
-      }
-    } else if (option === 4) {
-      this.gridSize = 4;
-      if (this.selectedImages.length > 4) {
-        this.selectedImages = this.selectedImages.slice(0, 4);
-      }
-    } else {
-      this.gridSize = 0;
-      this.selectedImages = [];
-    }
-  }
-  gridImages() {
-    this.gridImagesEnabled = !this.gridImagesEnabled;
-  }
-
-  showSingleImage() {
-    this.gridImagesEnabled = false;
-    this.selectedImages = this.selectedImages.slice(0, 1);
+  setGrid(columns: number): void {
+    this.gridColumns = columns;
+    this.selectedImages = this.selectedImages.slice(0, columns);
   }
 }
