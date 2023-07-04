@@ -3,8 +3,10 @@
     <div class="sidebar">
       <div class="image-container">
         <ng-container *ngFor="let image of images">
-          <h3>{{ image.title }}</h3>
-          <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected">
+          <div>
+            <h3>{{ image.title }}</h3>
+            <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected">
+          </div>
         </ng-container>
       </div>
     </div>
