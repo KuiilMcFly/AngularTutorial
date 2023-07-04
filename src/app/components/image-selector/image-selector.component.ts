@@ -100,4 +100,7 @@ export class ImageSelectorComponent implements OnInit {
     this.gridColumns = columns;
     this.selectedImages = this.selectedImages.slice(0, columns);
   }
+  showDefaultGrayImage(): boolean {
+    return this.selectedImages.length === 0;
+  }
 }

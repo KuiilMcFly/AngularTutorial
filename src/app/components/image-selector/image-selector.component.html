@@ -5,17 +5,17 @@
         <ng-container *ngFor="let image of images">
           <div>
             <h3>{{ image.title }}</h3>
-            <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected">
+            <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" [class.selected]="image.selected" />
           </div>
         </ng-container>
       </div>
     </div>
 
-
     <div class="content">
       <div class="image-grid grid-{{ gridColumns }}">
+        <img *ngIf="showDefaultGrayImage()" src="assets/Dogs/default-grigia.png" alt="Default Gray Image" />
         <ng-container *ngFor="let image of selectedImages.slice(0, gridColumns)">
-          <img [src]="image.src" [alt]="image.title">
+          <img [src]="image.src" [alt]="image.title" />
         </ng-container>
       </div>
     </div>
@@ -24,9 +24,15 @@
         <mat-icon>grid_on</mat-icon>
       </button>
       <mat-menu #dropdownMenu="matMenu" class="dropdown-menu">
-        <button mat-menu-item class="dropdown-item" (click)="setGrid(1)" [disabled]="gridSize === 1">1</button>
-        <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">2</button>
-        <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">4</button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(1)">
+          1
+        </button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(2)" [disabled]="gridSize === 2">
+          2
+        </button>
+        <button mat-menu-item class="dropdown-item" (click)="setGrid(4)" [disabled]="gridSize === 4">
+          4
+        </button>
       </mat-menu>
     </div>
   </div>
